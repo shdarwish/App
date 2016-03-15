@@ -1,0 +1,21 @@
+<%= form_for(@food_timing) do |f| %>
+  <% if @food_timing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@food_timing.errors.count, "error") %> prohibited this food_timing from being saved:</h2>
+
+      <ul>
+      <% @food_timing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :timing %><br>
+    <%= f.text_field :timing %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

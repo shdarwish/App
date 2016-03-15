@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Nutrition Facts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Servingsize</th>
+      <th>Calories</th>
+      <th>Totalfat</th>
+      <th>Saturatedfat</th>
+      <th>Transfat</th>
+      <th>Cholesterol</th>
+      <th>Sodium</th>
+      <th>Carbohydrates</th>
+      <th>Dietaryfiber</th>
+      <th>Protein</th>
+      <th>Vitamina</th>
+      <th>Vitaminc</th>
+      <th>Calcium</th>
+      <th>Iron</th>
+      <th>Vegetarian</th>
+      <th>Vegan</th>
+      <th>Dairyallergy</th>
+      <th>Eggallergy</th>
+      <th>Peanutallergy</th>
+      <th>Treenutallergy</th>
+      <th>Fishallergy</th>
+      <th>Shellfishallergy</th>
+      <th>Soyallergy</th>
+      <th>Wheatallergy</th>
+      <th>Wholegrain</th>
+      <th>Healthfulchoice</th>
+      <th>Heartsmart</th>
+      <th>Kosher</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nutrition_facts.each do |nutrition_fact| %>
+      <tr>
+        <td><%= nutrition_fact.food_id %></td>
+        <td><%= nutrition_fact.servingSize %></td>
+        <td><%= nutrition_fact.calories %></td>
+        <td><%= nutrition_fact.totalFat %></td>
+        <td><%= nutrition_fact.saturatedFat %></td>
+        <td><%= nutrition_fact.transFat %></td>
+        <td><%= nutrition_fact.cholesterol %></td>
+        <td><%= nutrition_fact.sodium %></td>
+        <td><%= nutrition_fact.carbohydrates %></td>
+        <td><%= nutrition_fact.dietaryFiber %></td>
+        <td><%= nutrition_fact.protein %></td>
+        <td><%= nutrition_fact.vitaminA %></td>
+        <td><%= nutrition_fact.vitaminC %></td>
+        <td><%= nutrition_fact.calcium %></td>
+        <td><%= nutrition_fact.iron %></td>
+        <td><%= nutrition_fact.vegetarian %></td>
+        <td><%= nutrition_fact.vegan %></td>
+        <td><%= nutrition_fact.dairyAllergy %></td>
+        <td><%= nutrition_fact.eggAllergy %></td>
+        <td><%= nutrition_fact.peanutAllergy %></td>
+        <td><%= nutrition_fact.treenutAllergy %></td>
+        <td><%= nutrition_fact.fishAllergy %></td>
+        <td><%= nutrition_fact.shellfishAllergy %></td>
+        <td><%= nutrition_fact.soyAllergy %></td>
+        <td><%= nutrition_fact.wheatAllergy %></td>
+        <td><%= nutrition_fact.wholeGrain %></td>
+        <td><%= nutrition_fact.healthfulChoice %></td>
+        <td><%= nutrition_fact.heartSmart %></td>
+        <td><%= nutrition_fact.kosher %></td>
+        <td><%= link_to 'Show', nutrition_fact %></td>
+        <td><%= link_to 'Edit', edit_nutrition_fact_path(nutrition_fact) %></td>
+        <td><%= link_to 'Destroy', nutrition_fact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nutrition fact', new_nutrition_fact_path %>

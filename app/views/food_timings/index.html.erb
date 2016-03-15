@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Food Timings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timing</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @food_timings.each do |food_timing| %>
+      <tr>
+        <td><%= food_timing.timing %></td>
+        <td><%= link_to 'Show', food_timing %></td>
+        <td><%= link_to 'Edit', edit_food_timing_path(food_timing) %></td>
+        <td><%= link_to 'Destroy', food_timing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Food timing', new_food_timing_path %>

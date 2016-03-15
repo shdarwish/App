@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Biryani
+  type_id: 1
+  restaurant_id: 1
+  food_timing_id: 1
+
+two:
+  name: PinkPasta
+  type_id: 1
+  restaurant_id: 1
+  food_timing_id: 1

@@ -17,12 +17,15 @@
 
 <p>
   <strong>Totalfat:</strong>
-  <%= @nutrition_fact.totalFat %>
+  <%= @nutrition_fact.totalFat %>g
+  <%= ((@nutrition_fact.totalFat/65.0)*100).round %>%
 </p>
 
 <p>
   <strong>Saturatedfat:</strong>
-  <%= @nutrition_fact.saturatedFat %>
+  <%= @nutrition_fact.saturatedFat %>g
+  <%= ((@nutrition_fact.saturatedFat/20.0)*100).round %>%
+  
 </p>
 
 <p>
@@ -32,22 +35,27 @@
 
 <p>
   <strong>Cholesterol:</strong>
-  <%= @nutrition_fact.cholesterol %>
+  <%= @nutrition_fact.cholesterol %>mg
+  <%= ((@nutrition_fact.cholesterol/300.0)*100).round %>%
 </p>
 
 <p>
   <strong>Sodium:</strong>
-  <%= @nutrition_fact.sodium %>
+  <%= @nutrition_fact.sodium %>mg
+  <%= ((@nutrition_fact.sodium/2400.0)*100).round %>%
 </p>
 
 <p>
   <strong>Carbohydrates:</strong>
-  <%= @nutrition_fact.carbohydrates %>
+  <%= @nutrition_fact.carbohydrates %>g
+  <%= ((@nutrition_fact.carbohydrates/300.0)*100).round %>%
 </p>
 
 <p>
   <strong>Dietaryfiber:</strong>
-  <%= @nutrition_fact.dietaryFiber %>
+  <%= @nutrition_fact.dietaryFiber %>g
+  <%= ((@nutrition_fact.dietaryFiber/25.0)*100).round %>%
+  
 </p>
 
 <p>

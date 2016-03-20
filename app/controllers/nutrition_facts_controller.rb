@@ -69,6 +69,6 @@ class NutritionFactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nutrition_fact_params
-      params.require(:nutrition_fact).permit(:food_id, :servingSize, :calories, :totalFat, :saturatedFat, :transFat, :cholesterol, :sodium, :carbohydrates, :dietaryFiber, :protein, :vitaminA, :vitaminC, :calcium, :iron, :vegetarian, :vegan, :dairyAllergy, :eggAllergy, :peanutAllergy, :treenutAllergy, :fishAllergy, :shellfishAllergy, :soyAllergy, :wheatAllergy, :wholeGrain, :healthfulChoice, :heartSmart, :kosher)
+      params.require(:nutrition_fact).permit(:food_id, :servingSize, :calories, :protein, :totalFat, :saturated, :trans, :cholesterol, :carbohydrates, :sugars, :dietaryFiber, :sodium, :potassium, :magnesium, :calcium, :iron, :vitaminD, :vegetarian, :vegan, :dairyAllergy, :eggAllergy, :peanutAllergy, :treenutAllergy, :fishAllergy, :shellfishAllergy, :soyAllergy, :wheatAllergy, :wholeGrain, :healthfulChoice, :heartSmart, :kosher)
     end
 end

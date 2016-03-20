@@ -4,18 +4,20 @@ class CreateNutritionFacts < ActiveRecord::Migration
       t.integer :food_id
       t.integer :servingSize
       t.integer :calories
-      t.integer :totalFat
-      t.integer :saturatedFat
-      t.integer :transFat
-      t.integer :cholesterol
-      t.integer :sodium
-      t.integer :carbohydrates
-      t.integer :dietaryFiber
-      t.integer :protein
-      t.integer :vitaminA
-      t.integer :vitaminC
-      t.integer :calcium
-      t.integer :iron
+      t.float :protein
+      t.float :totalFat
+      t.float :saturated
+      t.float :trans
+      t.float :cholesterol
+      t.float :carbohydrates
+      t.float :sugars
+      t.float :dietaryFiber
+      t.float :sodium
+      t.float :potassium
+      t.float :magnesium
+      t.float :calcium
+      t.float :iron
+      t.float :vitaminD
       t.boolean :vegetarian
       t.boolean :vegan
       t.boolean :dairyAllergy

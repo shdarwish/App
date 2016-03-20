@@ -4,18 +4,20 @@ one:
   food_id: 1
   servingSize: 1
   calories: 1
-  totalFat: 1
-  saturatedFat: 1
-  transFat: 1
-  cholesterol: 1
-  sodium: 1
-  carbohydrates: 1
-  dietaryFiber: 1
-  protein: 1
-  vitaminA: 1
-  vitaminC: 1
-  calcium: 1
-  iron: 1
+  protein: 1.5
+  totalFat: 1.5
+  saturated: 1.5
+  trans: 1.5
+  cholesterol: 1.5
+  carbohydrates: 1.5
+  sugars: 1.5
+  dietaryFiber: 1.5
+  sodium: 1.5
+  potassium: 1.5
+  magnesium: 1.5
+  calcium: 1.5
+  iron: 1.5
+  vitaminD: 1.5
   vegetarian: false
   vegan: false
   dairyAllergy: false
@@ -35,18 +37,20 @@ two:
   food_id: 2
   servingSize: 1
   calories: 1
-  totalFat: 1
-  saturatedFat: 1
-  transFat: 1
-  cholesterol: 1
-  sodium: 1
-  carbohydrates: 1
-  dietaryFiber: 1
-  protein: 1
-  vitaminA: 1
-  vitaminC: 1
-  calcium: 1
-  iron: 1
+  protein: 1.5
+  totalFat: 1.5
+  saturated: 1.5
+  trans: 1.5
+  cholesterol: 1.5
+  carbohydrates: 1.5
+  sugars: 1.5
+  dietaryFiber: 1.5
+  sodium: 1.5
+  potassium: 1.5
+  magnesium: 1.5
+  calcium: 1.5
+  iron: 1.5
+  vitaminD: 1.5
   vegetarian: false
   vegan: false
   dairyAllergy: false

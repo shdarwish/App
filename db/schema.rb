@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315203933) do
+ActiveRecord::Schema.define(version: 20160320184225) do
 
   create_table "food_timings", force: :cascade do |t|
     t.string   "timing"
@@ -38,18 +38,20 @@ ActiveRecord::Schema.define(version: 20160315203933) do
     t.integer  "food_id"
     t.integer  "servingSize"
     t.integer  "calories"
-    t.integer  "totalFat"
-    t.integer  "saturatedFat"
-    t.integer  "transFat"
-    t.integer  "cholesterol"
-    t.integer  "sodium"
-    t.integer  "carbohydrates"
-    t.integer  "dietaryFiber"
-    t.integer  "protein"
-    t.integer  "vitaminA"
-    t.integer  "vitaminC"
-    t.integer  "calcium"
-    t.integer  "iron"
+    t.float    "protein"
+    t.float    "totalFat"
+    t.float    "saturated"
+    t.float    "trans"
+    t.float    "cholesterol"
+    t.float    "carbohydrates"
+    t.float    "sugars"
+    t.float    "dietaryFiber"
+    t.float    "sodium"
+    t.float    "potassium"
+    t.float    "magnesium"
+    t.float    "calcium"
+    t.float    "iron"
+    t.float    "vitaminD"
     t.boolean  "vegetarian"
     t.boolean  "vegan"
     t.boolean  "dairyAllergy"
@@ -75,12 +77,6 @@ ActiveRecord::Schema.define(version: 20160315203933) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "roles", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -90,7 +86,7 @@ ActiveRecord::Schema.define(version: 20160315203933) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "password_digest"
-    t.integer  "role_id"
+    t.boolean  "admin"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

@@ -3,9 +3,9 @@
 one:
   name: Sam
   password_digest: <%= BCrypt::Password.create('secret') %>
-  role_id: 1
+  admin: true
 
 two:
   name: Lam
   password_digest: <%= BCrypt::Password.create('secret') %>
-  role_id: 1
+  admin: false

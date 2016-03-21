@@ -1,5 +1,6 @@
 class FoodTimingsController < ApplicationController
   before_action :set_food_timing, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only, only: [:show, :new, :edit, :create, :update, :destroy]
 
   # GET /food_timings
   # GET /food_timings.json
@@ -71,4 +72,13 @@ class FoodTimingsController < ApplicationController
     def food_timing_params
       params.require(:food_timing).permit(:timing)
     end
+
+
+    def admin_only
+      if !current_user.admin?
+        redirect_to root_path
+      end 
+    end
+
+
 end

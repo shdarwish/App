@@ -155,5 +155,9 @@
   <%= @nutrition_fact.kosher %>
 </p>
 
-<%= link_to 'Edit', edit_nutrition_fact_path(@nutrition_fact) %> |
-<%= link_to 'Back', nutrition_facts_path %>
+<% if logged_in? %>
+  <%= link_to 'Edit', edit_nutrition_fact_path(@nutrition_fact) %> |
+  <%= link_to 'Back', nutrition_facts_path %>
+<% end %>
+
+

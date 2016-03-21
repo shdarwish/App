@@ -2,8 +2,6 @@
 
 one:
   name: SCcafeteria
-  location_id: 1
 
 two:
   name: CMUQcafeteria
-  location_id: 1

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :nutrition_facts
   resources :food_timings
   resources :restaurants
-  resources :locations
   resources :types
   resources :foods
   #get 'admin/index'

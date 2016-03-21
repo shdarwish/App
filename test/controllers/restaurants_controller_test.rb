@@ -3,7 +3,7 @@ require 'test_helper'
 class RestaurantsControllerTest < ActionController::TestCase
   setup do
     @restaurant = restaurants(:one)
-    @update = {location_id: 1, name: 'CMUQ'}
+    @update = {name: 'CMUQ'}
   end
 
   test "should get index" do
@@ -36,7 +36,7 @@ class RestaurantsControllerTest < ActionController::TestCase
   end
 
   test "should update restaurant" do
-    patch :update, id: @restaurant, restaurant: { location_id: @restaurant.location_id, name: @restaurant.name }
+    patch :update, id: @restaurant, restaurant: {name: @restaurant.name }
     assert_redirected_to restaurant_path(assigns(:restaurant))
   end
 

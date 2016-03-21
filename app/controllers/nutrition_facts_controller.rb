@@ -1,5 +1,6 @@
 class NutritionFactsController < ApplicationController
   before_action :set_nutrition_fact, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate, only: [:show]
 
   # GET /nutrition_facts
   # GET /nutrition_facts.json

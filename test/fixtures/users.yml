@@ -2,10 +2,10 @@
 
 one:
   name: Sam
-  password_digest: <%= BCrypt::Password.create('secret') %>
+  password_digest: <%= BCrypt::Password.create('secrettt') %>
   admin: true
 
 two:
   name: Lam
-  password_digest: <%= BCrypt::Password.create('secret') %>
+  password_digest: <%= BCrypt::Password.create('secrettt') %>
   admin: false

@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :authenticate
+  #skip_before_action :authenticate
 
   def new
   end
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   def destroy
     log_out
     flash[:notice] = 'Logged out'
-    redirect_to root_path
+    redirect_to login_url
   	#session[:user_id] = nil
   	#redirect_to login_url, notice: "Logged out"
   end

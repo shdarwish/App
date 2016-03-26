@@ -1,4 +1,4 @@
 class FoodTiming < ActiveRecord::Base
-	has_many :foods
+	has_many :food_time
 	validates :timing, presence: true, uniqueness: true
 end

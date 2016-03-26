@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :food_id %><br>
-    <%= f.number_field :food_id %>
+    <%= f.collection_select :food_id, Food.all, :id, :name %> 
   </div>
   <div class="field">
     <%= f.label :servingSize %><br>

@@ -43,7 +43,8 @@
   <tbody>
     <% @nutrition_facts.each do |nutrition_fact| %>
       <tr>
-        <td><%= nutrition_fact.food_id %></td>
+   <!--     <td><%= nutrition_fact.food_id %></td> -->
+        <td><%= nutrition_fact.food.name %></td>
         <td><%= nutrition_fact.servingSize %></td>
         <td><%= nutrition_fact.calories %></td>
         <td><%= nutrition_fact.protein %></td>

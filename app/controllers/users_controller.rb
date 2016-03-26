@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :admin_only
+#  before_action :admin_only
 
   # GET /users
   # GET /users.json
@@ -76,11 +76,11 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :password, :password_confirmation, :admin)
     end
 
-    def admin_only
-      if !current_user.admin?
-        redirect_to root_path
-      end 
-    end
+ #   def admin_only
+  #    if !current_user.admin?
+   #     redirect_to root_path
+   #   end 
+   # end
 
 
 end

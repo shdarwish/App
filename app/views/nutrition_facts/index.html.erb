@@ -21,21 +21,14 @@
       <th>Magnesium</th>
       <th>Calcium</th>
       <th>Iron</th>
-      <th>Vitamind</th>
-      <th>Vegetarian</th>
-      <th>Vegan</th>
-      <th>Dairyallergy</th>
       <th>Eggallergy</th>
-      <th>Peanutallergy</th>
-      <th>Treenutallergy</th>
       <th>Fishallergy</th>
       <th>Shellfishallergy</th>
       <th>Soyallergy</th>
+      <th>Dairyallergy</th>
+      <th>Milkallergy</th>
       <th>Wheatallergy</th>
-      <th>Wholegrain</th>
-      <th>Healthfulchoice</th>
-      <th>Heartsmart</th>
-      <th>Kosher</th>
+      <th>g6pdallergy</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -61,20 +54,14 @@
         <td><%= nutrition_fact.calcium %></td>
         <td><%= nutrition_fact.iron %></td>
         <td><%= nutrition_fact.vitaminD %></td>
-        <td><%= nutrition_fact.vegetarian %></td>
-        <td><%= nutrition_fact.vegan %></td>
-        <td><%= nutrition_fact.dairyAllergy %></td>
         <td><%= nutrition_fact.eggAllergy %></td>
-        <td><%= nutrition_fact.peanutAllergy %></td>
-        <td><%= nutrition_fact.treenutAllergy %></td>
         <td><%= nutrition_fact.fishAllergy %></td>
         <td><%= nutrition_fact.shellfishAllergy %></td>
         <td><%= nutrition_fact.soyAllergy %></td>
+        <td><%= nutrition_fact.dairyAllergy %></td>
+        <td><%= nutrition_fact.milkAllergy %></td>
         <td><%= nutrition_fact.wheatAllergy %></td>
-        <td><%= nutrition_fact.wholeGrain %></td>
-        <td><%= nutrition_fact.healthfulChoice %></td>
-        <td><%= nutrition_fact.heartSmart %></td>
-        <td><%= nutrition_fact.kosher %></td>
+        <td><%= nutrition_fact.g6pdAllergy %></td>
         <td><%= link_to 'Show', nutrition_fact %></td>
         <td><%= link_to 'Edit', edit_nutrition_fact_path(nutrition_fact) %></td>
         <td><%= link_to 'Destroy', nutrition_fact, method: :delete, data: { confirm: 'Are you sure?' } %></td>

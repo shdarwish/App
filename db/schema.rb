@@ -56,20 +56,14 @@ ActiveRecord::Schema.define(version: 20160326180150) do
     t.float    "calcium"
     t.float    "iron"
     t.float    "vitaminD"
-    t.boolean  "vegetarian"
-    t.boolean  "vegan"
-    t.boolean  "dairyAllergy"
     t.boolean  "eggAllergy"
-    t.boolean  "peanutAllergy"
-    t.boolean  "treenutAllergy"
     t.boolean  "fishAllergy"
     t.boolean  "shellfishAllergy"
     t.boolean  "soyAllergy"
+    t.boolean  "dairyAllergy"
+    t.boolean  "milkAllergy"
     t.boolean  "wheatAllergy"
-    t.boolean  "wholeGrain"
-    t.boolean  "healthfulChoice"
-    t.boolean  "heartSmart"
-    t.boolean  "kosher"
+    t.boolean  "g6pdAllergy"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

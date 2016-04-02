@@ -44,3 +44,25 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+  footer {
+    font: inherit;
+    background-color: #f8f8f8;
+    height: 80px;
+  }
+
+    #footer {
+
+      .inner .menu {
+        font-size: 0.8em;
+        color: #666;
+        }
+
+      .menu {
+        padding-top:25px;
+      }
+
+    }
+
+
+

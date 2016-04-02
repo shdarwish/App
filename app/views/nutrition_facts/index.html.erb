@@ -1,34 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Nutrition Facts</h1>
+<h4><strong>Listing Nutrition Facts</strong></h4>
 
-<table>
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>Food</th>
-      <th>Servingsize</th>
       <th>Calories</th>
-      <th>Protein</th>
-      <th>Totalfat</th>
-      <th>Saturated</th>
-      <th>Trans</th>
-      <th>Cholesterol</th>
-      <th>Carbohydrates</th>
-      <th>Sugars</th>
-      <th>Dietaryfiber</th>
-      <th>Sodium</th>
-      <th>Potassium</th>
-      <th>Magnesium</th>
-      <th>Calcium</th>
-      <th>Iron</th>
-      <th>Eggallergy</th>
-      <th>Fishallergy</th>
-      <th>Shellfishallergy</th>
-      <th>Soyallergy</th>
-      <th>Dairyallergy</th>
-      <th>Milkallergy</th>
-      <th>Wheatallergy</th>
-      <th>g6pdallergy</th>
+      <th>Egg Allergy</th>
+      <th>Fish Allergy</th>
+      <th>Shellfish Allergy</th>
+      <th>Soy Allergy</th>
+      <th>Dairy Allergy</th>
+      <th>Milk Allergy</th>
+      <th>Wheat Allergy</th>
+      <th>G6PD Allergy</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,22 +24,7 @@
       <tr>
    <!--     <td><%= nutrition_fact.food_id %></td> -->
         <td><%= nutrition_fact.food.name %></td>
-        <td><%= nutrition_fact.servingSize %></td>
         <td><%= nutrition_fact.calories %></td>
-        <td><%= nutrition_fact.protein %></td>
-        <td><%= nutrition_fact.totalFat %></td>
-        <td><%= nutrition_fact.saturated %></td>
-        <td><%= nutrition_fact.trans %></td>
-        <td><%= nutrition_fact.cholesterol %></td>
-        <td><%= nutrition_fact.carbohydrates %></td>
-        <td><%= nutrition_fact.sugars %></td>
-        <td><%= nutrition_fact.dietaryFiber %></td>
-        <td><%= nutrition_fact.sodium %></td>
-        <td><%= nutrition_fact.potassium %></td>
-        <td><%= nutrition_fact.magnesium %></td>
-        <td><%= nutrition_fact.calcium %></td>
-        <td><%= nutrition_fact.iron %></td>
-        <td><%= nutrition_fact.vitaminD %></td>
         <td><%= nutrition_fact.eggAllergy %></td>
         <td><%= nutrition_fact.fishAllergy %></td>
         <td><%= nutrition_fact.shellfishAllergy %></td>

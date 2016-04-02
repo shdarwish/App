@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
- # skip_before_action :authenticate
+  skip_before_action :authenticate
 
   def new
   end
@@ -10,7 +10,11 @@ class SessionsController < ApplicationController
   		#session[:user_id] = user.id
       log_in user
       flash[:notice] = 'Logged in'
-  		redirect_to admin_url
+      if user.admin == true 
+        redirect_to admin_url
+      else
+        redirect_to nutritionist_url
+      end
   	else
   		#redirect_to login_url, alert: "Invalid user/password combination" 
       flash.now[:alert] = 'Invalid name/password'

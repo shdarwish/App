@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+ # get 'nutritionist/index'
+  get 'nutritionist' => 'nutritionist#index'
+
   resources :nutrition_facts
   resources :food_timings
   resources :restaurants

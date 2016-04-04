@@ -131,6 +131,11 @@
   <%= @nutrition_fact.g6pdAllergy %>
 </p>
 
+<p>
+  <strong>Vegetarian:</strong>
+  <%= @nutrition_fact.vegetarian %>
+</p>
+
 <% if logged_in? %>
   <%= link_to 'Edit', edit_nutrition_fact_path(@nutrition_fact) %> |
   <%= link_to 'Back', nutrition_facts_path %>

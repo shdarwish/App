@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160326180150) do
     t.boolean  "milkAllergy"
     t.boolean  "wheatAllergy"
     t.boolean  "g6pdAllergy"
+    t.boolean  "vegetarian"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

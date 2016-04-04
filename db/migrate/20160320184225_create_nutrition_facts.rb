@@ -26,6 +26,7 @@ class CreateNutritionFacts < ActiveRecord::Migration
       t.boolean  :milkAllergy
       t.boolean  :wheatAllergy
       t.boolean  :g6pdAllergy
+      t.boolean  :vegetarian
 
       t.timestamps null: false
     end

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :restaurants
   resources :types
   resources :foods
+
+  resources :searches
   #get 'admin/index'
 
   #  get 'sessions/new'

@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-users = User.create(name: "Admin", password:
+users = User.create(name: "admin", password:
     "project1", admin: true)

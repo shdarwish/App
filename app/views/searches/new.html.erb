@@ -1,0 +1,95 @@
+<h1> Custom Search</h1>
+
+<%= form_for @search, html: {class: "pure-form"} do |s| %>
+
+	<div class="field">
+		<%= s.label :calories %><br />
+		<p>min: </p><%= s.text_field :calories_min %>
+		<p>max: </p><%= s.text_field :calories_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :protein %><br />
+		<p>min: </p><%= s.text_field :protein_min %>
+		<p>max: </p><%= s.text_field :protein_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :totalfat %><br />
+		<p>min: </p><%= s.text_field :totalfat_min %>
+		<p>max: </p><%= s.text_field :totalfat_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :saturated %><br />
+		<p>min: </p><%= s.text_field :saturated_min %>
+		<p>max: </p><%= s.text_field :saturated_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :trans %><br />
+		<p>min: </p><%= s.text_field :trans_min %>
+		<p>max: </p><%= s.text_field :trans_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :cholesterol %><br />
+		<p>min: </p><%= s.text_field :cholesterol_min %>
+		<p>max: </p><%= s.text_field :cholesterol_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :carbohydrate %><br />
+		<p>min: </p><%= s.text_field :carbohydrate_min %>
+		<p>max: </p><%= s.text_field :carbohydrate_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :sugers %><br />
+		<p>min: </p><%= s.text_field :sugars_min %>
+		<p>max: </p><%= s.text_field :sugars_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :dietaryfiber %><br />
+		<p>min: </p><%= s.text_field :dietaryfiber_min %>
+		<p>max: </p><%= s.text_field :dietaryfiber_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :sodium %><br />
+		<p>min: </p><%= s.text_field :sodium_min %>
+		<p>max: </p><%= s.text_field :sodium_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :potassium %><br />
+		<p>min: </p><%= s.text_field :potassium_min %>
+		<p>max: </p><%= s.text_field :potassium_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :magnesium %><br />
+		<p>min: </p><%= s.text_field :magnesium_min %>
+		<p>max: </p><%= s.text_field :magnesium_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :calcium %><br />
+		<p>min: </p><%= s.text_field :calcium_min %>
+		<p>max: </p><%= s.text_field :calcium_max %>
+	</div>
+
+
+	<div class="field">
+		<%= s.label :iron %><br />
+		<p>min: </p><%= s.text_field :iron_min %>
+		<p>max: </p><%= s.text_field :iron_max %>
+	</div>
+
+	<div class="action"><%= s.submit "Submit", class: "pure-button pure-button-primary" %></div>
+
+
+<% end %>
+
+

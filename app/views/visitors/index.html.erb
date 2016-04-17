@@ -1,43 +1,20 @@
 
 <br>
 
-<h4>Configure a meal</h5>
-<div class="row">
-    <div class="col-sm-6">
-        <div class="well">
-            <h6>Select a meal time:</h6>
-            <button type="button" class="btn btn-default btn-block">Breakfast</button>
-            <button type="button" class="btn btn-default btn-block">Lunch</button>
-            <button type="button" class="btn btn-default btn-block">Dinner</button>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="well">
-            <h6>Select a restaurant:</h6>
-            <button type="button" class="btn btn-default btn-block">ALDANAH - CMUQ</button>
-            <button type="button" class="btn btn-default btn-block">ALDANAH - VCUQ</button>
-            <button type="button" class="btn btn-default btn-block">ALDANAH - Student Center</button>
-        </div>
-    </div>
+<h4>Configure a meal</h4>
+<div> 
+
+<p>
+ <!-- to show data from DB -->
+<% for meal_time in MealTime.all  %>
+<!-- <p><%= link_to meal_time.time, meal_time_path(meal_time.id) %></p> -->
+<p><%= meal_time.time %></p>
+<% end %>
+
+
+
+</p>
+
+
+
 </div>
-<div class="row">
-    <div class="col-sm-6">
-        <div class="well">
-            <h6>Select a food group:</h6>
-            <button type="button" class="btn btn-default btn-block">Sandwiches</button>
-            <button type="button" class="btn btn-default btn-block">Soups</button>
-            <button type="button" class="btn btn-default btn-block">Entrees</button>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="well">
-            <h6>Select a food:</h6>
-            <button type="button" class="btn btn-default btn-block">Chicken Burger</button>
-            <button type="button" class="btn btn-default btn-block"> <a href="http://localhost:3000/nutrition_facts/1">Salmon</a></button>
-            <button type="button" class="btn btn-default btn-block">Bean Soup</button>
-        </div>
-    </div>
-</div>
-
-
-

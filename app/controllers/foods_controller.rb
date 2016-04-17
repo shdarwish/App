@@ -1,11 +1,11 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate, only: [:show, :fsearch, :step4]
 
   # GET /foods
   # GET /foods.json
   def index
-    #@foods = Food.all
-     @foods = Food.search(params[:search])
+    @foods = Food.all
   end
 
   # GET /foods/1
@@ -31,6 +31,9 @@ class FoodsController < ApplicationController
       if @food.save
         format.html { redirect_to @food, notice: 'Food was successfully created.' }
         format.json { render :show, status: :created, location: @food }
+
+        @food.restaurants = Restaurant.find(params[:restaurant_ids])
+        @food.meal_times = MealTime.find(params[:meal_time_ids])
       else
         format.html { render :new }
         format.json { render json: @food.errors, status: :unprocessable_entity }
@@ -62,6 +65,18 @@ class FoodsController < ApplicationController
     end
   end
 
+  def fsearch
+    @foods = Food.search(params[:search])
+  end
+
+  def step4
+    @foods = Food.clickedtype(params[:type])
+    $type = params[:type]
+    puts $type
+  end 
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -71,6 +86,6 @@ class FoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
-      params.require(:food).permit(:name, :type_id, :restaurant_id, :food_timing_id)
+      params.require(:food).permit(:name, :type_id, :servingSize, :calories, :protein, :totalFat, :saturated, :trans, :cholesterol, :carbohydrates, :sugars, :dietaryFiber, :sodium, :potassium, :magnesium, :calcium, :iron, :vitaminD, :eggAllergy, :fishAllergy, :shellfishAllergy, :soyAllergy, :dairyAllergy, :milkAllergy, :wheatAllergy, :g6pdAllergy, :vegetarian)
     end
 end

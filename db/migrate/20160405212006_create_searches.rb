@@ -44,6 +44,19 @@ class CreateSearches < ActiveRecord::Migration
     	t.float :iron_min
     	t.float :iron_max
 
+        t.float :vitamind_min
+        t.float :vitamind_max
+
+        t.boolean  :eggAllergy
+        t.boolean  :fishAllergy
+        t.boolean  :shellfishAllergy
+        t.boolean  :soyAllergy
+        t.boolean  :dairyAllergy
+        t.boolean  :milkAllergy
+        t.boolean  :wheatAllergy
+        t.boolean  :g6pdAllergy
+        t.boolean  :vegetarian
+
 
       t.timestamps null: false
     end

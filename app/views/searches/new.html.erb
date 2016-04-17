@@ -87,6 +87,57 @@
 		<p>max: </p><%= s.text_field :iron_max %>
 	</div>
 
+	<div class="field">
+		<%= s.label :vitaminD %><br />
+		<p>min: </p><%= s.text_field :vitamind_min %>
+		<p>max: </p><%= s.text_field :vitamind_max %>
+	</div>
+
+	<div class="field">
+		<%= s.label :eggAllergy %><br>
+		<%= s.check_box :eggAllergy %>
+    </div>
+
+    <div class="field">
+    	<%= s.label :fishAllergy %><br>
+    	<%= s.check_box :fishAllergy %>
+    </div>
+
+    <div class="field">
+    	<%= s.label :shellfishAllergy %><br>
+    	<%= s.check_box :shellfishAllergy %>
+    </div>
+
+    <div class="field">
+    	<%= s.label :soyAllergy %><br>
+    	<%= s.check_box :soyAllergy %>
+    </div>
+
+    <div class="field">
+    	<%= s.label :dairyAllergy %><br>
+    	<%= s.check_box :dairyAllergy %>
+    </div>
+
+    <div class="field">
+    	<%= s.label :milkAllergy %><br>
+    	<%= s.check_box :milkAllergy %>
+    </div>
+
+    <div class="field">
+    	<%= s.label :wheatAllergy %><br>
+    	<%= s.check_box :wheatAllergy %>
+    </div>
+
+    <div class="field">
+    	<%= s.label :g6pdAllergy %><br>
+    	<%= s.check_box :g6pdAllergy %>
+    </div>
+
+    <div class="field">
+    	<%= s.label :vegetarian %><br>
+    	<%= s.check_box :vegetarian %>
+    </div>
+
 	<div class="action"><%= s.submit "Submit", class: "pure-button pure-button-primary" %></div>
 
 

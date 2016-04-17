@@ -1,19 +1,14 @@
 Rails.application.routes.draw do
+  resources :meal_times
  # get 'nutritionist/index'
   get 'nutritionist' => 'nutritionist#index'
 
-  resources :nutrition_facts
-  resources :food_timings
   resources :restaurants
   resources :types
   resources :foods
 
   resources :searches
-  #get 'admin/index'
 
-  #  get 'sessions/new'
-#  get 'sessions/create'
-#  get 'sessions/destroy'
 
   get 'admin' => 'admin#index' 
   controller :sessions do
@@ -24,6 +19,16 @@ Rails.application.routes.draw do
 
   resources :users
   root to: 'visitors#index'
+
+  get 'fsearch' => 'foods#fsearch'
+
+  get 'configure_a_meal' => 'meal_times#step1'
+  get 'configure_a_meal_step1' => 'restaurants#step2'
+  get 'configure_a_meal_step2' => 'types#step3'
+  get 'configure_a_meal_step3' => 'foods#step4'
+
+
+
 end
 
 

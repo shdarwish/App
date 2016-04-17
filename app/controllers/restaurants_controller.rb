@@ -1,6 +1,8 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
-  before_action :admin_only, only: [:index, :show, :new, :edit, :create, :update, :destroy]
+  before_action :admin_only
+  skip_before_action :authenticate, only: [:step2]
+  skip_before_action :admin_only, only: [:step2]
 
   # GET /restaurants
   # GET /restaurants.json
@@ -61,6 +63,13 @@ class RestaurantsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def step2
+    @restaurants = Restaurant.clickedtime(params[:time])
+    $time = params[:time]
+    puts $time
+
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.

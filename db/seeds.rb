@@ -7,5 +7,25 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-users = User.create(name: "admin", password:
-    "project1", admin: true)
+users = User.create([{name: "admin", password:
+    "project1", admin: true}, {name: "nut", password:
+    "project1", admin: false}])
+
+Restaurant.create(name: 'CMUQ')
+Restaurant.create(name: 'VCUQ')
+
+MealTime.create(time: 'Lunch')
+MealTime.create(time: 'Dinner')
+MealTime.create(time: 'Breakfast')
+
+Type.create(name: 'salad')
+Type.create(name: 'soup')
+Type.create(name: 'drink')
+
+
+
+
+
+
+
+

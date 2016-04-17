@@ -11,51 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405212006) do
+ActiveRecord::Schema.define(version: 20160408143639) do
 
   create_table "food_restaurants", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "restaurant_id"
+    t.integer  "food_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "food_times", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "food_timings", force: :cascade do |t|
-    t.string   "timing"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "food_id"
+    t.integer  "meal_time_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "foods", force: :cascade do |t|
     t.string   "name"
     t.integer  "type_id"
-    t.integer  "restaurant_id"
-    t.integer  "food_timing_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  create_table "nutrition_facts", force: :cascade do |t|
-    t.integer  "food_id"
     t.integer  "servingSize"
     t.integer  "calories"
-    t.float    "protein"
-    t.float    "totalFat"
-    t.float    "saturated"
-    t.float    "trans"
-    t.float    "cholesterol"
-    t.float    "carbohydrates"
-    t.float    "sugars"
-    t.float    "dietaryFiber"
-    t.float    "sodium"
-    t.float    "potassium"
-    t.float    "magnesium"
-    t.float    "calcium"
-    t.float    "iron"
-    t.float    "vitaminD"
+    t.float    "protein",          default: 0.0
+    t.float    "totalFat",         default: 0.0
+    t.float    "saturated",        default: 0.0
+    t.float    "trans",            default: 0.0
+    t.float    "cholesterol",      default: 0.0
+    t.float    "carbohydrates",    default: 0.0
+    t.float    "sugars",           default: 0.0
+    t.float    "dietaryFiber",     default: 0.0
+    t.float    "sodium",           default: 0.0
+    t.float    "potassium",        default: 0.0
+    t.float    "magnesium",        default: 0.0
+    t.float    "calcium",          default: 0.0
+    t.float    "iron",             default: 0.0
+    t.float    "vitaminD",         default: 0.0
     t.boolean  "eggAllergy"
     t.boolean  "fishAllergy"
     t.boolean  "shellfishAllergy"
@@ -65,8 +55,14 @@ ActiveRecord::Schema.define(version: 20160405212006) do
     t.boolean  "wheatAllergy"
     t.boolean  "g6pdAllergy"
     t.boolean  "vegetarian"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  create_table "meal_times", force: :cascade do |t|
+    t.string   "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -104,6 +100,17 @@ ActiveRecord::Schema.define(version: 20160405212006) do
     t.float    "calcium_max"
     t.float    "iron_min"
     t.float    "iron_max"
+    t.float    "vitamind_min"
+    t.float    "vitamind_max"
+    t.boolean  "eggAllergy"
+    t.boolean  "fishAllergy"
+    t.boolean  "shellfishAllergy"
+    t.boolean  "soyAllergy"
+    t.boolean  "dairyAllergy"
+    t.boolean  "milkAllergy"
+    t.boolean  "wheatAllergy"
+    t.boolean  "g6pdAllergy"
+    t.boolean  "vegetarian"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

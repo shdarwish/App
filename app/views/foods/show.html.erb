@@ -7,18 +7,142 @@
 
 <p>
   <strong>Type:</strong>
- <!-- <%= @food.type_id %> -->
  <%= @food.type.name %>
 </p>
 
+<%= render partial: 'times_list' %>
+
+<%= render partial: 'restaurants_list' %>
+
 <p>
-  <strong>Restaurant:</strong>
-  <%= @food.restaurant_id %>
+  <strong>Servingsize:</strong>
+  <%= @food.servingSize %>
 </p>
 
 <p>
-  <strong>Food timing:</strong>
-  <%= @food.food_timing_id %>
+  <strong>Calories:</strong>
+  <%= @food.calories %>
+</p>
+
+<p>
+  <strong>Protein:</strong>
+  <%= @food.protein %>
+</p>
+
+<p>
+  <strong>Totalfat:</strong>
+  <%= @food.totalFat %>
+  <%= ((@food.totalFat/65.0)*100).round %>%
+</p>
+
+<p>
+  <strong>Saturated:</strong>
+  <%= @food.saturated %>
+  <%= ((@food.saturated/20.0)*100).round %>%
+</p>
+
+<p>
+  <strong>Trans:</strong>
+  <%= @food.trans %>
+</p>
+
+<p>
+  <strong>Cholesterol:</strong>
+  <%= @food.cholesterol %>
+  <%= ((@food.cholesterol/300.0)*100).round %>%
+</p>
+
+<p>
+  <strong>Carbohydrates:</strong>
+  <%= @food.carbohydrates %>
+   <%= ((@food.carbohydrates/300.0)*100).round %>%
+</p>
+
+<p>
+  <strong>Sugars:</strong>
+  <%= @food.sugars %>
+</p>
+
+<p>
+  <strong>Dietaryfiber:</strong>
+  <%= @food.dietaryFiber %>
+  <%= ((@food.dietaryFiber/25.0)*100).round %>%
+</p>
+
+<p>
+  <strong>Sodium:</strong>
+  <%= @food.sodium %>
+   <%= ((@food.sodium/2400.0)*100).round %>%
+</p>
+
+<p>
+  <strong>Potassium:</strong>
+  <%= @food.potassium %>
+</p>
+
+<p>
+  <strong>Magnesium:</strong>
+  <%= @food.magnesium %>
+</p>
+
+<p>
+  <strong>Calcium:</strong>
+  <%= @food.calcium %>
+</p>
+
+<p>
+  <strong>Iron:</strong>
+  <%= @food.iron %>
+</p>
+
+<p>
+  <strong>Vitamind:</strong>
+  <%= @food.vitaminD %>
+</p>
+
+<p>
+  <strong>Eggallergy:</strong>
+  <%= @food.eggAllergy %>
+</p>
+
+<p>
+  <strong>Fishallergy:</strong>
+  <%= @food.fishAllergy %>
+</p>
+
+<p>
+  <strong>Shellfishallergy:</strong>
+  <%= @food.shellfishAllergy %>
+</p>
+
+<p>
+  <strong>Soyallergy:</strong>
+  <%= @food.soyAllergy %>
+</p>
+
+<p>
+  <strong>Dairyallergy:</strong>
+  <%= @food.dairyAllergy %>
+</p>
+
+<p>
+  <strong>Milkallergy:</strong>
+  <%= @food.milkAllergy %>
+</p>
+
+<p>
+  <strong>Wheatallergy:</strong>
+  <%= @food.wheatAllergy %>
+</p>
+
+<p>
+  <strong>G6pdallergy:</strong>
+  <%= @food.g6pdAllergy %>
+</p>
+
+<p>
+  <strong>Vegetarian:</strong>
+  <%= @food.vegetarian %>
 </p>
 
 <%= link_to 'Edit', edit_food_path(@food) %> |

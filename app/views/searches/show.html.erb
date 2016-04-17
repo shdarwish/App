@@ -1,14 +1,15 @@
 <h1>Search Result</h1>
 <p><%= link_to 'Back', new_search_path %></p>
 
-<% if @search.search_nutrition_facts.empty? %>
+<% if @search.search_foods.empty? %>
 	<p> No records found</p>
 <% else %>
-	<% @search.search_nutrition_facts.each do |c| %>
+	<% @search.search_foods.each do |c| %>
 	<br>
 
 		<div class="div">
-			<h1><%= c.food.name %></h1>
+
+		<p><%= link_to c.name, food_path(c.id) %></p>
 		</div>
 
 	<% end %>

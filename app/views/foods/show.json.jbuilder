@@ -1,1 +1,1 @@
-json.extract! @food, :id, :name, :type_id, :restaurant_id, :food_timing_id, :created_at, :updated_at
+json.extract! @food, :id, :name, :type_id, :servingSize, :calories, :protein, :totalFat, :saturated, :trans, :cholesterol, :carbohydrates, :sugars, :dietaryFiber, :sodium, :potassium, :magnesium, :calcium, :iron, :vitaminD, :eggAllergy, :fishAllergy, :shellfishAllergy, :soyAllergy, :dairyAllergy, :milkAllergy, :wheatAllergy, :g6pdAllergy, :vegetarian, :created_at, :updated_at

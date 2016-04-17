@@ -1,5 +1,6 @@
 class TypesController < ApplicationController
   before_action :set_type, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate, only: [:step3]
 
   # GET /types
   # GET /types.json
@@ -59,6 +60,13 @@ class TypesController < ApplicationController
       format.html { redirect_to types_url, notice: 'Type was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def step3
+    @types = Type.clickedrestaurant(params[:restaurant])
+    $restaurant = params[:restaurant]
+    puts $restaurant
+
   end
 
   private

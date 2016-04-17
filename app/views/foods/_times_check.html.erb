@@ -1,0 +1,11 @@
+<p>
+  <% for meal_time in MealTime.all  %>
+     <%= check_box_tag "meal_time_ids[]", meal_time.id, @food.meal_times.include?(meal_time) %>
+     <%= meal_time.time %>
+     <br />
+  <% end  %>
+</p>
+
+
+
+

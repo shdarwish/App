@@ -8,19 +8,17 @@
         <span class="icon-bar"></span> 
       </button>
 
-      
-      <a class="navbar-brand" href="#">Nutrition Application</a>
+
+     <a class="navbar-brand" href="#">Nutrition Application</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         
-        <li><%= link_to 'Configure a Meal', root_path%></li>
-        <li><%= link_to 'Nutrient Ranges', page_path('nutranges')%></li>
+        <li><%= link_to 'Configure a Meal', configure_a_meal_path%></li>
+        <li><%= link_to 'Nutrient Ranges', new_search_path%></li>
         <li><%= link_to 'Comprehensive Details', page_path('compdet')%></li>
         <li><%= link_to 'My Meal', page_path('mymeal')%></li>
-       <!-- <li><a href="#">Nutrient Ranges</a></li>
-        <li><a href="#">Comprehensive Details</a></li>
-        <li><a href="#">My Meal</a></li> -->
+
         
 
         <% if logged_in? %>

@@ -1,49 +1,59 @@
-<p id="notice"><%= notice %></p>
+<!-- the page that lists all the foods in the application -->
 
-<h4><strong>Listing Foods</strong></h4>
 
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Calories</th>
-      <th>Egg Allergy</th>
-      <th>Fish Allergy</th>
-      <th>Shellfish Allergy</th>
-      <th>Soy Allergy</th>
-      <th>Dairy Allergy</th>
-      <th>Milk Allergy</th>
-      <th>Wheat Allergy</th>
-      <th>G6PD Allergy</th>
-      <th>Vegetarian</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- Start foods Heading Section -->
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+    <div class="container">
+      <div class="row">
+        <div id="appHeading" class="section-title text-center">
+          <h3>Listing foods</h3>
+          <p>Add, Edit and Delete foods</p>
+        </div>
+      </div>
+<!--end of foods heading section-->
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <div id="listingappPanel" >
+            <div class="panel-body shadbox">
+              <table class="table text-left" >
+                <tr>
+                  <th>Food Name</th>
+                  <th></th>
+                  </tr>
+                  <% @foods.each do |food| %> 
+                    <tr>
+                    <td><%= food.name %></td>
+                    <td> 
 
-  <tbody>
-    <% @foods.each do |food| %>
-      <tr>
-        <td><%= food.name %></td>
-        <td><%= food.type.name %></td>
-        <td><%= food.calories %></td>
-        <td><%= food.eggAllergy %></td>
-        <td><%= food.fishAllergy %></td>
-        <td><%= food.shellfishAllergy %></td>
-        <td><%= food.soyAllergy %></td>
-        <td><%= food.dairyAllergy %></td>
-        <td><%= food.milkAllergy %></td>
-        <td><%= food.wheatAllergy %></td>
-        <td><%= food.g6pdAllergy %></td>
-        <td><%= food.vegetarian %></td>
-        <td><%= link_to 'Show', food %></td>
-        <td><%= link_to 'Edit', edit_food_path(food) %></td>
-        <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Food', new_food_path %>
+                      <!-- the buttons used for show, edit and distroy -->
+                      <div class="pull-right hidden-phone">
+                          <div id="listingfoodsbuttons">
+                            <button class="btn btn-default btn-xs">
+                              <!--<i class="fa fa-check"></i>-->
+                              <%= link_to '', food, :class =>'fa fa-check' %>
+                            </button>
+                            <button class="btn btn-default btn-xs">
+                              <!--<i class="fa fa-pencil"></i>-->
+                              <%= link_to '', edit_food_path(food), :class =>'fa fa-pencil' %>
+                            </button>
+                            <button class="btn btn-default btn-xs">
+                              <!--<i class="fa fa-times"></i>-->
+                              <%= link_to '', food, method: :delete, data: { confirm: 'Are you sure?' }, :class =>'fa fa-times' %>
+                            </button>
+                        </div>
+                      </div>
+                    </td>
+                    </tr>
+                  <% end %>
+                </table>
+              <%= link_to 'Add New food', new_food_path, class: 'appformbutton btn btn-info appbackbutton'%>
+              <%= link_to 'Back', nutritionist_path, class: 'appformbutton btn btn-info appbackbutton'%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

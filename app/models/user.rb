@@ -1,17 +1,15 @@
 class User < ActiveRecord::Base
+
+
+  #Adds methods to set and authenticate against a BCrypt password.
   has_secure_password
+
+  # before saving the name, change it to downcase
   before_save { self.name = name.downcase }
 
   #Validations 
 	validates :name, presence: true, uniqueness: true
 	validates :password, length: { minimum: 8 }
-
-	#private
-	#def ensure_an_admin_remains
-     # if User.count.zero?
-    #    raise "Can't delete last user"
-   #   end
-   # end    
-
+ 
 
 end

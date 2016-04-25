@@ -1,9 +1,49 @@
-<h3>Admin Page</h3>
+<!-- the admin page view -->
 
-<div>
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+  <div class="container">
 
-	<button type="button" class="btn btn-default"><%= link_to 'Users', users_path%></button>
-	<button type="button" class="btn btn-default"><%= link_to 'Restaurants', restaurants_path %></button>
-	<button type="button" class="btn btn-default"><%= link_to 'Times', meal_times_path %></button>
 
+  	<div class="row">
+		<div class="section-title text-center">
+            <h3>Welcome, Admin!</h3>
+            <p>Choose what you want to add</p>
+        </div>
+    </div>
+
+			<div class="col-md-12">
+                    
+                    <div class="row">
+                        <div class="menu-item blue1 responsive">
+                            <a data-toggle="modal">
+                                <i class="fa fa-users"></i>
+                                <p><%= link_to 'Users', users_path%></p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="menu-item green1 responsive">
+                            <a data-toggle="modal">
+                                <i class="fa fa-map-marker"></i>
+                                <p><%= link_to 'Restaurants', restaurants_path %></p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="menu-item light-red1 responsive">
+                            <a data-toggle="modal">
+                                <i class="fa fa-clock-o"></i>
+                                <p><%= link_to 'Times', meal_times_path %></p>
+                            </a>
+                        </div>
+                    </div>
+
+            </div>
+
+  </div>
+  </div>
 </div>

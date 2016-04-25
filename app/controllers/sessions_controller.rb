@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+
+    #before going to any page it checks if the user is logged_in
   skip_before_action :authenticate
 
   def new
@@ -26,7 +28,6 @@ class SessionsController < ApplicationController
     log_out
     flash[:notice] = 'Logged out'
     redirect_to login_url
-  	#session[:user_id] = nil
-  	#redirect_to login_url, notice: "Logged out"
+
   end
 end

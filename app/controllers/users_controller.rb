@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+  #before preforming any task check if the user is admin
   before_action :admin_only
 
   # GET /users
@@ -76,6 +78,8 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :password, :password_confirmation, :admin)
     end
 
+
+# a method that check if the user is admin or not
    def admin_only
       if !current_user.admin?
         redirect_to root_path

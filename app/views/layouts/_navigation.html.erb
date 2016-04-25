@@ -1,55 +1,74 @@
-<%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
+<!-- the side navigation bar in our application --> 
 
+<div class='wrapper'>
+  <div class='sidebar'>
+    <div class='title'>
 
-     <a class="navbar-brand" href="#">Nutrition Application</a>
+      Nutrition Application
+      
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        
-        <li><%= link_to 'Configure a Meal', configure_a_meal_path%></li>
-        <li><%= link_to 'Nutrient Ranges', new_search_path%></li>
-        <li><%= link_to 'Comprehensive Details', page_path('compdet')%></li>
-        <li><%= link_to 'My Meal', page_path('mymeal')%></li>
+    <ul class='nav'>
 
-        
+      <li>
+        <%= link_to ' Home', root_path%>
+      </li>
 
-        <% if logged_in? %>
-        <li class="dropdown">
-            <% if current_user.admin? %>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
-            <span class="caret"></span>
-            <% else %>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nutrionist
-            <span class="caret"></span>
-            <% end %>
-          
-          </a>
-          <ul class="dropdown-menu">
-            <% if current_user.admin? %>
-                <li><%= link_to 'Admin', admin_path %></li>
-            <% else %>
-                <li><%= link_to 'Nutritionist', nutritionist_path %></li>
-            <% end %>
-            <li><%= link_to 'Logout', logout_path, method: :delete%></li>
-          </ul>
-        </li>
+      <li>
+        <%= link_to 'Choose a Meal', configure_a_meal_path%>
+      </li>
+      <li>
+        <%= link_to "By Nutrient Ranges", new_search_path%>
+      </li>
+<!--       <li>
+        <a class='active'>Milestones</a>
+      </li> -->
+      <li>
+        <%= link_to 'By Food Name', page_path('compdet')%>
+      </li>
+
+      <li>
+        <%= link_to 'My Meal', meal_path(current_meal) %>
+      </li>
+
+      
+      <!-- this following if condition showed admin when the user in not loged in -->
+      <!-- if the user logged in as an admin it change the link of admin to the user admin page and add logout button -->
+      <!-- if the user logged in as a nutritionist, the buttons change to nutritionist button that goes to nutritionist page and add logout button -->
+
+      <% if logged_in? %>
+        <% if current_user.admin? %>
+
+          <li>
+            <%= link_to 'Admin', admin_path %>
+          </li>
+
         <% else %>
-          <li><%= link_to 'Admin', login_path %> </li>
+
+          <li>
+            <%= link_to 'Nutritionist', nutritionist_path %>
+          </li>
+
         <% end %>
 
+        <li>
+          <%= link_to 'Logout', logout_path, method: :delete%>
+        </li>
 
-       
-      </ul>
-    </div>
+      <% else %>
+          <li>
+            <%= link_to 'Admin', login_path %>
+          </li>
+      <% end %> 
+
+    </ul>
   </div>
-</nav>
+</div>
+
+
+
+
+
+
+
 
 

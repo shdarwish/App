@@ -1,14 +1,48 @@
-<p id="notice"><%= notice %></p>
+<!-- This page shows the specific user page -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
 
-<p>
-  <strong>admin:</strong>
-  <%= @user.admin %>
-</p>
+<!-- Start Showusers Heading Section -->
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+    <div class="container">
+      <div class="row">
+        <div id="ShowappsHeading" class="section-title text-center">
+          <h3>Show user</h3>
+        </div>
+      </div>
+<!--end of showusers heading section-->
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <div id="showappPanel" >
+            <div class="panel-body shadbox">
+              <table class="table text-left">
+                <tr>
+                    <th>Name</th>
+                    <th>Admin</th>
+                </tr>
+                <tr>
+                    <td><%= @user.name %></td>
+                    <td><%= @user.admin %> </td>
+                    <td>
+                    <button class="btn btn-default btn-xs">
+                          <!--<i class="fa fa-pencil"></i>-->
+                          <%= link_to '', edit_user_path, :class =>'fa fa-pencil' %>
+                      </button>
+                    </td>
+                </tr>
+            </table>
+              <div class="row">
+              <%= link_to 'Back', users_path, class: 'appformbutton btn btn-info appbackbutton'%>
+            </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+              
+
+

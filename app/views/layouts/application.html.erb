@@ -1,3 +1,5 @@
+<!-- it has the html that will be showen in all pages -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,24 +14,7 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
-
-
-
-
-      <%= link_to "Search", new_search_path %>
       
-       <%= render 'layouts/messages' %>
        <%= yield %>
-    </main>
-      <footer id="footer">
-        <div class="inner">
-          <ul class="menu">
-            Health and Wellness Office - Carnegie Mellon Qatar
-          </br>
-            Design: Hanan Tamimi, Shikha Darwish, Fariya Shabbir
-          </ul>
-        </div>
-  </footer>
   </body>
 </html>

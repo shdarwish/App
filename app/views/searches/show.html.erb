@@ -1,5 +1,22 @@
-<h1>Search Result</h1>
-<p><%= link_to 'Back', new_search_path %></p>
+<!-- This page showes the results from search by range -->
+
+
+<!-- Start users Heading Section -->
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+    <div class="container">
+      <div class="row">
+        <div id="appHeading" class="section-title text-center">
+          <h3>Search Result</h3>
+        </div>
+      </div>
+<!--end of users heading section-->
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          
+            <div class=" shadbox">
+              <table class="table text-center" >
 
 <% if @search.search_foods.empty? %>
 	<p> No records found</p>
@@ -14,3 +31,11 @@
 
 	<% end %>
 <% end %>
+                </table>
+
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

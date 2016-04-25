@@ -1,6 +1,10 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+
+  #before preforming any method it checks if the user is admin using admin_only method
   before_action :admin_only
+
+  #do not check if the user is logged in and if the user admin before preforming step2
   skip_before_action :authenticate, only: [:step2]
   skip_before_action :admin_only, only: [:step2]
 
@@ -64,10 +68,13 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  # This method take us to a page to be used for Step2 in Configure a Meal process
+  # The page will show all the records useing method step2 from the model
+  # :time is the clicked type 
+  # $time stores the type as a global variable 
   def step2
     @restaurants = Restaurant.clickedtime(params[:time])
     $time = params[:time]
-    puts $time
 
   end 
 
@@ -82,6 +89,7 @@ class RestaurantsController < ApplicationController
       params.require(:restaurant).permit(:name)
     end
 
+    # a method that check if the user is admin or not
     def admin_only
       if !current_user.admin?
         redirect_to root_path

@@ -1,5 +1,7 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
+
+  #do not check if the user is logged_in before preforming show, fsearch and step4 
   skip_before_action :authenticate, only: [:show, :fsearch, :step4]
 
   # GET /foods
@@ -65,14 +67,20 @@ class FoodsController < ApplicationController
     end
   end
 
+  # This method take us to a page the will present the results from search by name
+  # The page will show all the records using method search from food model
+  # :search is the keyword/name passed in the search page
   def fsearch
     @foods = Food.search(params[:search])
   end
 
+  # This method take us to a page to be used for Step4 in Configure a Meal process
+  # The page will show all the records useing method step4 from the model
+  # :type is the clicked type 
+  # $type stores the type as a global variable 
   def step4
     @foods = Food.clickedtype(params[:type])
     $type = params[:type]
-    puts $type
   end 
 
 

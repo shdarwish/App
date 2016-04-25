@@ -1,5 +1,6 @@
 class MealTime < ActiveRecord::Base
 
+# before saving the time, change it to downcase
 	before_save { self.time = time.downcase }
 
 	#Relations

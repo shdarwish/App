@@ -1,6 +1,29 @@
-<h4><strong>Editing Meal Time</strong></h4>
+<!-- the meal times edit page -->
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @meal_time %> |
-<%= link_to 'Back', meal_times_path %>
+<!--Start Edit Meal Times Heading Section -->
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="section-title text-center">
+          <h3>Edit Meal Time</h3>
+        </div>
+      </div>
+<!--end Edit Meal Time Heading section-->
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <section>
+            <div class="shadbox">
+              <div class="panel-body">
+                <!-- it use the form to edit the meal times -->
+                <%= render 'form' %>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+     

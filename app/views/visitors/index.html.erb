@@ -1,20 +1,94 @@
+<!-- the home page -->
+<!-- the first page the user see -->
 
-<br>
+<!DOCTYPE html>
+<html lang="en">
 
-<h4>Configure a meal</h4>
-<div> 
+    <head>
 
-<p>
- <!-- to show data from DB -->
-<% for meal_time in MealTime.all  %>
-<!-- <p><%= link_to meal_time.time, meal_time_path(meal_time.id) %></p> -->
-<p><%= meal_time.time %></p>
-<% end %>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-
-
-</p>
-
+        <!-- Custom Fonts -->
 
 
-</div>
+    </head>
+    
+    <body>
+          <div class='content'>
+            <div class='button'></div>
+        
+                <!-- Start Logo Section -->
+                 <section id="logo-section" class="text-center">
+                    <div class="container">
+                        <div class="row">
+                        <div class="col-md-12">
+                            <div class="logo text-center">
+                            <h1>Nutrition Application</h1>
+                            <p>For better food choices</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+        <!-- End Logo Section -->
+        
+        <!-- Start Main Body Section -->
+        <div class="mainbody-section text-center">
+            <div class="container">
+                
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="menu-item blue1 responsive">
+                            <a data-toggle="modal">
+                                <i class="fa fa-mouse-pointer"></i>
+                                <p><%= link_to 'Choose a Meal', configure_a_meal_path%></p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="menu-item light-red1 responsive">
+                            <a data-toggle="modal">
+                                <i class="fa fa-search"></i>
+                                <p><%= link_to "Search By Food's Nutrient Ranges", new_search_path%></p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <div class="menu-item green1 responsive">
+                            <a href="#service-modal" data-toggle="modal">
+                                <i class="fa fa-search"></i>
+                                <p><%= link_to 'Search By Food Name', page_path('compdet')%></p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="menu-item color1 responsive">
+                            <a href="#testimonial-modal" data-toggle="modal">
+                                <i class="fa fa-cutlery"></i>
+                                <p><%= link_to 'My Meal', meal_path(current_meal)%></p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+        <!-- End Main Body Section -->
+        
+    </body>
+    
+</html>

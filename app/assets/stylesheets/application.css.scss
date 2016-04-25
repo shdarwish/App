@@ -12,8 +12,1331 @@
  *
  *= require_tree .
  *= require_self
+ *= require font_awesome
  */
+
+/************** NAV BAR ***************/
+
+
+@import url('http://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,300');
+@import url('http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font: 12px/1 'Montserrat', sans-serif;
+  color: #333;
+  background: #333;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  display: flex;
+  min-height: 100%;
+}
+
+.sidebar {
+  position: absolute;
+  width: 220px;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+  background: #eee;
+  box-shadow: 0 0 5px rgba(0,0,0,1);
+  transform: translate3d(0,0,0);
+  transition: transform .3s;
+}
+
+.content.isOpen {
+  transform: translate3d(220px,0,0);
+}
+
+.button {
+  cursor: pointer;
+}
+
+.button:before {
+  content: '\f0c9';
+  font: 42px fontawesome;
+}
+
+
+.title {
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  color: #eee;
+  border-bottom: 1px solid #222;
+  background: #2a2a2a;
+}
+
+.nav li a {
+  position: relative;
+  display: block;
+  padding: 15px 15px 15px 50px;
+  font-size: 12px;
+  color: #eee;
+  border-bottom: 1px solid #222;
+
+}
+
+.nav li {
+
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.nav li a:before {
+  font: 14px fontawesome;
+  position: absolute;
+  top: 14px;
+  left: 20px;
+}
+
+.nav li:nth-child(1) a:before { content: '\f015'; }
+.nav li:nth-child(2) a:before { content: '\f00a'; }
+.nav li:nth-child(3) a:before { content: '\f002'; }
+.nav li:nth-child(4) a:before { content: '\f002';  }
+.nav li:nth-child(5) a:before { content: '\f0f5'; }
+.nav li:nth-child(6) a:before { content: '\f023'; left: 23px; }
+
+.nav li a:hover {
+  background: #444;
+}
+
+.nav li a.active {
+  box-shadow: inset 5px 0 0 #5b5, inset 6px 0 0 #222;
+  background: #444;
+}
+
+
+/************** END NAV ***************/
+
+/************** HOME PAGE ***************/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
+
+
+body {
+    background-color: #2a2a2a;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 50% 50%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+    background-color: transparent;
+}
+
+ul,ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+
+/*.btn-primary {
+    border-color: #FF432E;
+    background-color: #FF432E;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #fff;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    border-color: #ea321e;
+    background-color: none !important;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    /*border-color: #FF432E;
+    background-color: #FF432E;*/
+
+
+
+/**** Start Section Title Section ****/
+
+.section-title h3{
+    color: #666 !important;
+    //font-style: italic;
+    font-size: 28px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: none;
+}
+
+.section-title p {
+    padding-bottom: 60px;
+    color: #999;
+    font-size: 18px;
+    //font-style: italic;
+    font-weight: 300;
+}
+
+
+/**** Start Logo Section ****/
+
+#logo-section {
+    
+}
+
+.logo h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #8c8c8c;
+    font-size: 50px;
+}
+
+
+.logo p {
+    color: #999;
+    font-size: 18px;
+    //font-style: italic;
+    font-weight: 300;
+}
+
+
+/**** Start Background Color ****/
+
+.blue1 {
+    background: #28ABE3;
+}
+
+.blue1:hover {
+    background-color: #1a96cb;
+}
+
+.light-red1 {
+    background: #ff6666;
+}
+
+.light-red1:hover {
+    background: #ff4d4d;
+}
+
+.green1 {
+    background: #72bf48;
+}
+
+.green1:hover {
+    background: #62aa3c;
+}
+
+.color1 {
+    background: #0ECEAB;
+}
+
+.color1:hover {
+    background: #0dbf9e;
+}
+
+
+
+/**** Start Main Body Section ****/
+
+.mainbody-section {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.menu-item {
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	
+}
+
+
+.menu-item a {
+  font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    /*text-transform: uppercase;*/
+    color: #ffffff;
+    display: block;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.menu-item a p {
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.menu-item a i {
+    font-size: 50px;
+    padding-bottom: 20px;
+}
+
+.menu-item:hover a {
+    text-decoration: none;
+	animation: wobble;
+	-webkit-animation: wobble;
+	animation-duration: 1000ms;
+	-webkit-animation-duration: 1000ms;
+}
+
+@media only screen 
+and (min-width : 600px) 
+and (max-width : 991px) {
+    
+    .menu-item {
+        display: inline-block;
+        width: 32.8%;
+    }
+    
+    .menu-item.responsive {
+        width: 49.5%;
+        float: left;
+        margin-right: 3px;
+    }
+    
+    .menu-item.responsive-2 {
+        width: 49.5%;
+        float: right;
+    }
+    
+}
+
+
+
+@media only screen 
+and (min-width : 992px) 
+and (max-width : 1199px) {
+    
+    .menu-item {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
+    .menu-item a i {
+        font-size: 32px;
+    }
+    
+    .menu-item a p {
+        font-size: 16px;
+    }
+    
+}
+
+/**** End Main Body Section ****/
+
+/* END HOME PAGE */
+
+
+/* Show Food Page */
+
+
+.shadbox {
+    background-color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  
+}
+
+/******** Nutrition Label ***********/
+
+.shadlabelbox {
+    background-color: #ffffff;
+    padding: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  
+}
+
+
+body {
+  font-size: small;
+  line-height: 1.4;
+}
+p {
+  margin: 0;
+}
+
+.performance-facts {
+  border: 1px solid black;
+  width: 100%;
+  padding: 0.5rem;
+  margin-left: 0px;
+  margin-bottom: 15px;
+  table {
+    border-collapse: collapse;
+  }
+
+.performance-facts__title {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+.performance-facts__header {
+  border-bottom: 10px solid black;
+  padding: 0 0 0rem 0;
+  margin: 0 0 0rem 0;
+  height: 100px;
+}
+  
+  
+  p {
+    margin: 0;
+  }
+}
+.performance-facts__table {
+  width: 100%;
+  thead tr {
+    th, td {
+      border: 0;
+    }
+  }
+  th, td {
+    font-weight: normal;
+    text-align: left;
+    padding: 0.25rem 0;
+    border-top: 1px solid black; 
+    white-space: nowrap;
+  }
+  td {
+    &:last-child {
+      text-align: right;
+    }
+  }
+  .blank-cell {
+    width: 1rem;
+    border-top: 0;
+  }
+  .thick-row {
+    th, td {
+      border-top-width: 5px;
+    }
+  }
+}
+
+.small-info {
+  font-size: 0.9rem;
+}
+
+.performance-facts__table--small {
+  @extend .performance-facts__table;
+  border-bottom: 1px solid #999;
+  margin: 0 0 0.5rem 0;
+  thead {
+    tr {
+      border-bottom: 1px solid black; 
+    }
+  }
+  td {
+    &:last-child {
+      text-align: left;
+    }
+  }
+  th, td {
+    border: 0;
+    padding: 0;
+  }
+}
+
+.performance-facts__table--grid {
+  @extend .performance-facts__table;
+  margin: 0 0 0.5rem 0;
+  td {
+    &:last-child {
+      text-align: left;
+      &::before {
+        content: "•";
+        font-weight: bold;
+        margin: 0 0.25rem 0 0;
+      }
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+.thick-end {
+  border-bottom: 7px solid black;
+}
+.thin-end {
+  border-bottom: 1px solid black;
+}
+/*********** End of nutrition label fact ******/
+
+.fontshow h1{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+  color: #0ECEAB;
+
+}
+
+.fontshow h5{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+
+
+}
+
+.fontshow h6{
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+
+}
+
+.fontshow p{
+  text-transform: uppercase;
+
+}
+
+/* divider */
+
+.row.vdivide [class*='col-']:not(:last-child):after {
+  background: #e0e0e0;
+  width: 1px;
+  content: "";
+  display:block;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  right: 0;
+  min-height: 50px;
+}
+
+
+/*start of for admin and nutrionist pages */
+.panel {
+  border:none;
+  /*box-shadow: none;*/
+  -webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+}
+
+.table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #dddddd;
+}
+
+.btn{
+    font-weight: 500;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+}
+.btn.btn-default {
+    background-color: #fafafa;
+    color: #666;
+    border-color: #ddd;
+    border-bottom-color: #ddd;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.btn.btn-default:hover,
+.btn.btn-default:active,
+.btn.btn-default.hover {
+    background-color: #f4f4f4!important;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.btn.btn-success {
+    background-color: #27c24c;
+    border: none;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.btn.btn-success:hover,
+.btn.btn-success:active,
+.btn.btn-success.hover {
+    background-color: #23ad44;
+    border: none;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#listingappbuttons a:hover{
+    background-color: transparent;
+    text-decoration: none;
+}
+
+#Editappbutton a:hover{
+    text-decoration: none;
+}
+
+#Backappbutton a:hover{
+    text-decoration: none;
+}
+//end of style.css for listing app table
+
+#listingappPanel .panel-body{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#listingappPanel {
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+
+#listingappPanel .btn{
+  border-radius: 0px;
+}
+
+#listingappPanel th{
+  font-size: 16px;
+  font-family: Open Sans, sans-serif;
+  color: #1A237E;
+   border-top-color: transparent;
+}
+
+#listingappPanel td{
+  font-size: 14px;
+   font-family: Open Sans, sans-serif;
+  color: #2196F3;
+}
+
+#showappPanel .panel-body{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#showappPanel {
+  border-radius: 0px;
+  margin-bottom: 0px;
+  margin-top: 40px;
+}
+
+#showappPanel .btn{
+  border-radius: 0px;
+}
+
+#showappPanel th{
+  font-size: 16px;
+  font-family: Open Sans, sans-serif;
+  color: #1A237E;
+   border-top-color: transparent;
+}
+
+#showappPanel td{
+  font-size: 14px;
+   font-family: Open Sans, sans-serif;
+  color: #2196F3;
+}
+  
+#Addappbutton .btn{
+  border-radius: 0px;
+  color: white;
+//   margin-right:210px;
+  background-color: #0091EA;
+}
+
+#Editappbutton .btn{
+  border-radius: 0px;
+  color: white;
+  margin-right: 5px;
+//   margin-right:210px;
+  background-color: #0091EA;
+}
+
+#Backappbutton  .btn{
+  border-radius: 0px;
+  color: white;
+ 
+  background-color: #0091EA;
+}
+
+
+//start of edit app page
+.form-control {
+  /*-webkit-border-radius: 3px !important;
+  -moz-border-radius: 3px !important;
+  border-radius: 3px !important;*/
+  box-shadow: none;
+}
+.form-control:focus {
+  border-color: #3c8dbc !important;
+  box-shadow: none;
+}
+
+.btn {
+    font-weight: 500;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+}
+
+.btn.btn-info {
+    background-color: #23b7e5;
+    border: none;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.btn.btn-info:hover,
+.btn.btn-info:active,
+.btn.btn-info.hover {
+    background-color: #19a9d5;
+    border: none;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#appformpanel{
+  border-radius: 0px;
+}
+
+.appformcontrol{
+  float: none !important;
+  font-size: 14px !important;
+}
+.appformcontrol{
+  font-size: 18px;
+}
+ 
+.appformbutton{
+  border-radius: 0px !important;
+  margin-top: 15px;
+}
+
+.appbackbutton {
+  border-radius: 0px !important;
+  display: inline-block;
+}
+
+
+.appbackbutton {
+  color: white !important;
+}
+
+.appbackbutton a:hover{
+  text-decoration:none;
+  background-color: transparent;
+}
+
+
+//end of edit app page
+
+
+
+//add new app page
+
+
+#newappformpanel{
+  border-radius: 0px;
+}
+
+.appformcontrol{
+  float: none !important;
+  font-size: 14px !important;
+}
+.appformcontrol{
+  font-size: 18px;
+}
+
+ 
+.appformbutton{
+  border-radius: 0px;
+  margin-bottom: 15px;
+}
+
+.appbackbutton {
+  border-radius: 0px;
+  display: inline-block;
+}
+
+.appbackbutton a{
+  color: white;
+}
+
+.appbackbutton a:hover{
+  text-decoration:none;
+  background-color: transparent;
+}
+
+//end add new app page
+
+
+
+
+
+
+
+
+
+
 
  .navbar-nav li a:hover {
     color: black !important;
+}
+
+// nutrients page url//
+@import url(http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300);
+// nutrients page url//
+
+
+// nutrients page body styling //
+#body body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#body a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+}
+
+#body ul,ol {
+    margin: 0;
+    padding: 0;
+}
+
+#body li {
+    color: #888;
+    list-style: none;
+}
+
+ #body a{
+    text-decoration: none;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+#body a:hover {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+#body p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    line-height: 21px;
+}
+// end of nutrient ranges body //
+
+
+
+/**** Nutrient Ranges heading ****/
+
+#Nutritionalrangeheading .section-title h3{
+    color: #666 !important;
+    // font-style: italic;
+    font-size: 28px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: none;
+}
+
+#Nutritionalrangeheading p{
+    padding-bottom: 60px;
+    color: #999;
+    font-size: 18px;
+    font-weight: 300;
+}
+/****End Nutrient Ranges page heading ****/
+
+
+// start of nutrient ranges table //
+.col-md-2{
+  min-height: 1px;
+  margin-top: 2px;
+  margin-bottom: 1px;
+  float: right;
+  width: 26%;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+
+@media (min-width: 330px) {
+    #maxandmin .col-md-2{
+    float: right;
+  }
+}
+
+.form-control {
+  display: inline-block;
+  float: right;
+  text-align: center;
+  height: 30px;
+  margin-right: 15px;
+  font-size: 11px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.form-group {
+  margin-top: 6px;
+  
+  margin-bottom: 10px;color: #888;
+  
+}
+
+#rangestable h3{
+    font-family: Open Sans, sans-serif;
+    font-size: 24px;
+}
+
+#rangestable .plan-name{
+    height:65px;
+    margin-bottom: 15px;
+}
+
+#rangestable li{
+    font-size: 16px;
+    padding-left: 35px;
+    font-family: Open-Sans, sans-serif;
+}
+
+#rangestable label{
+    font-weight: normal;
+}
+
+.pricing-section {
+    padding: 80px 0;
+    background: #f5f5f5;
+}
+
+.pricing-table {
+    background: #E0E0E0;
+}
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 991px) {
+    .pricing-table {
+    margin-bottom: 30px;
+  }
+}
+.plan-name {
+  padding: 5px 0;
+    background: #ff6666;
+}
+.plan-name h3 {
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+}
+
+
+@media only screen 
+and (max-width : 320px) {
+    .carb-shorten{
+    font-size: 14px;
+  }
+}
+// end of nutrient ranges table//
+
+/*** allergens table  ****/
+
+
+#allergenstable h3{
+    font-family: Open Sans, sans-serif;
+    font-size: 24px;
+}
+
+
+#allergenstable .plan-name{
+    height:65px;
+    margin-bottom: 15px;
+}
+
+
+
+#allergenstable li{
+    font-size: 16px;
+    padding-left: 60px;
+    font-family: Open-Sans, sans-serif;
+}
+
+#allergenstable label{
+    font-weight: normal;
+}
+
+
+.plan-list2 li{
+   padding: 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+
+.plan-list li {
+  padding: 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+// start of check boxes
+.checkbox-inline input[type="checkbox"] {
+float: right;
+width:16px;
+height: 16px;
+margin-top: 7px;
+}
+
+
+.checkbox-inline {
+ display: inline-block;
+  margin-bottom: 7px;
+  font-weight: normal;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-top: 1px;
+}
+
+.checkbox-inline[disabled],fieldset[disabled] .checkbox-inline {
+  cursor: not-allowed;
+}
+// end of check boxes
+
+
+
+//end nutrient ranges table //
+
+
+
+//Search button - nutrients page//
+.btn-primary1 {
+  padding: 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+
+.btn-primary1:hover{
+  background-color: #FF432E;
+  border-color:#ea321e;
+}
+.btn1:hover{
+    text-decoration:none;
+}
+
+.btn-primary1 {
+    border-color: #FF432E;
+    background-color: #FF432E;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #fff;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn1{
+    margin-top: 10px;
+    width: 170px;
+    height: 50px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-family: Open Sans, sans serif;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+}
+// Search button end //
+
+
+
+//Comprehensive Details page//
+#comprdetailheading .section-title h3{
+    color: #666 !important;
+    // font-style: italic;
+    font-size: 28px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: none;
+}
+
+#comprdetailheading .section-title p {
+    padding-bottom: 60px;
+    color: #999;
+    font-size: 18px;
+    //font-style: italic;
+    font-weight: 300;
+}
+
+
+#search-box {
+position: relative;
+margin: 0;
+}
+
+#search-form 
+{
+height: 42px;
+border: 1px solid #999;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+background-color: #fff;
+overflow: hidden;
+margin-top:20px;
+}
+
+
+#search-text 
+{
+
+padding-left: 10px;
+font-size: 16px;
+color: grey;
+width: 100%;
+height: 40px;
+font-family: Open Sans, sans-serif;
+border-width: 0;
+background: transparent;
+}
+
+#search-box input[type="text"]
+{
+width: 90%;
+padding: 11px 0 12px 1em;
+color: #333;
+outline: none;
+}
+
+#search-button {
+position: absolute;
+top: 0;
+right: 0;
+height: 42px;
+margin-top: 20px;
+width: 80px;
+font-size: 16px;
+font-family: Open Sans, sans serif;
+color: #fff;
+text-align: center;
+line-height: 42px;
+border-width: 0;
+border-color: transparent;
+background-color: #72bf48;
+-webkit-border-radius: 0px;
+-moz-border-radius:  0px;
+border-radius:  0px;
+cursor: pointer;
+display:block;
+}
+
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 991px) {
+    #search-button{
+    margin-top: 0px;
+  }
+}
+
+
+//allergies images//
+
+.im {
+  width: 30px;
+  height: 30px;
+}
+
+
+//Steps pages!//
+
+.step1font a{
+ color: #28ABE3;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 400;
+
+}
+
+.step2font a{
+  color: #ff4d4d;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 400;
+
+}
+
+.step3font a{
+  color: #72bf48;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 400;
+
+}
+
+.step4font a{
+  color: #0ECEAB;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 400;
+
+}
+
+// touch ups //
+
+.button {
+  color: #8c8c8c;
+}
+
+.fontsearch li{
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.searchbutton {
+  text-transform: uppercase;
+  margin-top: 20px;
+  outline: 0;
+  background: #ff6666;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.mymealbutton {
+  text-transform: uppercase;
+  outline: 0;
+  background: #0ECEAB;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
 }

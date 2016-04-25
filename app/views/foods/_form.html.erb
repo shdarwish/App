@@ -1,3 +1,5 @@
+<!-- the form to add and edit food -->
+
 <%= form_for(@food) do |f| %>
   <% if @food.errors.any? %>
     <div id="error_explanation">
@@ -11,129 +13,149 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :type_id %><br>
-    <%= f.collection_select :type_id, Type.all, :id, :name %> 
+    <%= f.label :name, class: 'form-group' %>
+    <%= f.text_field :name, class: 'appformcontrol form-control' %>
   </div>
 
+  <!-- it list all types of food avalibale in the application -->
+  <div class="field">
+    <%= f.label :type_id, class: 'form-group' %>
+    <%= f.collection_select :type_id, Type.all, :id, :name, class: 'appformcontrol form-control' %> 
+  </div>
+
+    <!-- it lists all timing avalibale in the application -->
   <div>
-    <%= f.label :time %>
-    <%= render partial: 'times_check' %>
+    <%= f.label :time, class: 'form-group' %>
+    <%= render partial: 'times_check', class: 'appformcontrol form-control' %>
   </div>
 
+   <!-- it lists all resturants avalibale in the application -->
     <div>
-    <%= f.label :restaurants %>
-    <%= render partial: 'restaurants_check' %>
+    <%= f.label :restaurants, class: 'form-group' %>
+    <%= render partial: 'restaurants_check', class: 'appformcontrol form-control' %>
   </div>
 
+  <div class="field">
+    <%= f.label :servingSize,  class: 'form-group' %>
+    <%= f.number_field :servingSize , class: 'appformcontrol form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :calories,  class: 'form-group' %><br>
+    <%= f.number_field :calories, class: 'appformcontrol form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :protein,  class: 'form-group' %>
+    <%= f.text_field :protein, class: 'appformcontrol form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :totalFat,  class: 'form-group' %>
+    <%= f.text_field :totalFat, class: 'appformcontrol form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :saturated,  class: 'form-group' %>
+    <%= f.text_field :saturated, class: 'appformcontrol form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :trans,  class: 'form-group' %>
+    <%= f.text_field :trans, class: 'appformcontrol form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :cholesterol,  class: 'form-group' %>
+    <%= f.text_field :cholesterol, class: 'appformcontrol form-control'%>
+  </div>
+  <div class="field">
+    <%= f.label :carbohydrates,  class: 'form-group' %>
+    <%= f.text_field :carbohydrates, class: 'appformcontrol form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :sugars,  class: 'form-group' %>
+    <%= f.text_field :sugars, class: 'appformcontrol form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :dietaryFiber,  class: 'form-group' %>
+    <%= f.text_field :dietaryFiber, class: 'appformcontrol form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :sodium,  class: 'form-group' %>
+    <%= f.text_field :sodium, class: 'appformcontrol form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :potassium,  class: 'form-group' %>
+    <%= f.text_field :potassium, class: 'appformcontrol form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :magnesium,  class: 'form-group' %>
+    <%= f.text_field :magnesium, class: 'appformcontrol form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :calcium,  class: 'form-group' %>
+    <%= f.text_field :calcium, class: 'appformcontrol form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :iron,  class: 'form-group' %>
+    <%= f.text_field :iron, class: 'appformcontrol form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :vitaminD,  class: 'form-group' %>
+    <%= f.text_field :vitaminD, class: 'appformcontrol form-control' %>
+  </div>
 
-
-  <!-- NF info -->
+<br>
+  <strong><p class="form-group"> Allergies and Diet</p></strong>
+  
   <div class="field">
-    <%= f.label :servingSize %><br>
-    <%= f.number_field :servingSize %>
+    <%= f.check_box :eggAllergy %> Egg Allergy &nbsp; &nbsp;
+    <%= f.label :eggAllergy, class: 'appcheck form-group' do %>
+    <%end%>
   </div>
   <div class="field">
-    <%= f.label :calories %><br>
-    <%= f.number_field :calories %>
+    <%= f.check_box :fishAllergy %> Fish Allergy &nbsp; &nbsp;
+    <%= f.label :fishAllergy,  class: 'appcheck form-group'  do %>
+     <%end%>
   </div>
   <div class="field">
-    <%= f.label :protein %><br>
-    <%= f.text_field :protein %>
+      <%= f.check_box :shellfishAllergy %> Shellfish Allergy &nbsp; &nbsp;
+    <%= f.label :shellfishAllergy,  class: 'appcheck form-group' do %>
+  <%end%>
   </div>
   <div class="field">
-    <%= f.label :totalFat %><br>
-    <%= f.text_field :totalFat %>
+     <%= f.check_box :soyAllergy %> Soy Allergy &nbsp; &nbsp;
+    <%= f.label :soyAllergy,  class: 'appcheck form-group' do %>
+    <%end%>
   </div>
   <div class="field">
-    <%= f.label :saturated %><br>
-    <%= f.text_field :saturated %>
+     <%= f.check_box :dairyAllergy %> Dairy Allergy &nbsp; &nbsp;
+    <%= f.label :dairyAllergy,  class: 'appcheck form-group' do %>
+    <%end%>
+   
   </div>
   <div class="field">
-    <%= f.label :trans %><br>
-    <%= f.text_field :trans %>
+       <%= f.check_box :milkAllergy %> Milk Allergy &nbsp; &nbsp;
+    <%= f.label :milkAllergy,  class: 'appcheck form-group' do %>
+    <%end%>
   </div>
   <div class="field">
-    <%= f.label :cholesterol %><br>
-    <%= f.text_field :cholesterol %>
-  </div>
-  <div class="field">
-    <%= f.label :carbohydrates %><br>
-    <%= f.text_field :carbohydrates %>
-  </div>
-  <div class="field">
-    <%= f.label :sugars %><br>
-    <%= f.text_field :sugars %>
-  </div>
-  <div class="field">
-    <%= f.label :dietaryFiber %><br>
-    <%= f.text_field :dietaryFiber %>
-  </div>
-  <div class="field">
-    <%= f.label :sodium %><br>
-    <%= f.text_field :sodium %>
-  </div>
-  <div class="field">
-    <%= f.label :potassium %><br>
-    <%= f.text_field :potassium %>
-  </div>
-  <div class="field">
-    <%= f.label :magnesium %><br>
-    <%= f.text_field :magnesium %>
-  </div>
-  <div class="field">
-    <%= f.label :calcium %><br>
-    <%= f.text_field :calcium %>
-  </div>
-  <div class="field">
-    <%= f.label :iron %><br>
-    <%= f.text_field :iron %>
-  </div>
-  <div class="field">
-    <%= f.label :vitaminD %><br>
-    <%= f.text_field :vitaminD %>
-  </div>
-  <div class="field">
-    <%= f.label :eggAllergy %><br>
-    <%= f.check_box :eggAllergy %>
-  </div>
-  <div class="field">
-    <%= f.label :fishAllergy %><br>
-    <%= f.check_box :fishAllergy %>
-  </div>
-  <div class="field">
-    <%= f.label :shellfishAllergy %><br>
-    <%= f.check_box :shellfishAllergy %>
-  </div>
-  <div class="field">
-    <%= f.label :soyAllergy %><br>
-    <%= f.check_box :soyAllergy %>
-  </div>
-  <div class="field">
-    <%= f.label :dairyAllergy %><br>
-    <%= f.check_box :dairyAllergy %>
-  </div>
-  <div class="field">
-    <%= f.label :milkAllergy %><br>
-    <%= f.check_box :milkAllergy %>
-  </div>
-  <div class="field">
-    <%= f.label :wheatAllergy %><br>
-    <%= f.check_box :wheatAllergy %>
+    <%= f.check_box :wheatAllergy %> Wheat Allergy &nbsp; &nbsp;
+    <%= f.label :wheatAllergy,  class: 'appcheck form-group' do %>
+    <%end%>
   </div>
     <div class="field">
-    <%= f.label :g6pdAllergy %><br>
-    <%= f.check_box :g6pdAllergy %>
+       <%= f.check_box :g6pdAllergy %> g6pd Allergy
+    <%= f.label :g6pdAllergy,  class: 'appcheck form-group' do%>
+   <%end%>
   </div>
       <div class="field">
-    <%= f.label :vegetarian %><br>
-    <%= f.check_box :vegetarian %>
+    <%= f.check_box :vegetarian %> Vegetarian
+    <%= f.label :vegetarian, class: 'appcheck form-group' do  %>
+    <%end%>
   </div>
-  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+      </div>
+    <div class="actions">
+      <%= f.submit class: 'userformbutton btn btn-info' %>
+      <%= link_to 'Back', foods_path, class: 'userformbutton btn btn-info userbackbutton'%>
+    </div>
+
 <% end %>
+

@@ -1,6 +1,29 @@
-<h4><strong>Editing Restaurant</strong></h4>
+<!-- the edit page -->
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @restaurant %> |
-<%= link_to 'Back', restaurants_path %>
+<!--Start Edit Restaurants Heading Section -->
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="section-title text-center">
+          <h3>Edit Restaurant</h3>
+        </div>
+      </div>
+<!--end Edit Restaurant Heading section-->
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <section>
+            <div class="shadbox">
+              <div class="panel-body">
+                 <!-- the form is rendered in this page -->
+                <%= render 'form' %>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+               

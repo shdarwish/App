@@ -1,5 +1,27 @@
-<h4><strong>New Restaurant</strong></h4>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', restaurants_path %>
+<!-- create new food page -->
+         <!--Start newRestaurant Heading Section -->
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="section-title text-center">
+          <h3>New Restaurant</h3>
+        </div>
+      </div>
+            <!--end new restaurant heading section -->
+      <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+          <section>
+            <div class="shadbox">
+              <div class="panel-body">
+                                <!--  it render the form to be used for creating a new food -->
+                <%= render 'form' %>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

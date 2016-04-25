@@ -1,0 +1,95 @@
+<!-- This page represnt the My Meal page -->
+<!-- It showes all the food that are added to my meal and it act as nutrion calculator -->
+
+<div class='content'>
+	<div class='button'></div>
+	<div class="mainbody-section text-center">
+		<div class="container">
+			
+			<div class="row">
+				<div id="ShowappsHeading" class="section-title text-center">
+					<h3>My Meal</h3>
+					<p>Know your total nutrients for the day</p>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="shadbox">
+					<div class="table-responsive">
+  						<table class="table">
+
+  							<tr>
+							<thead>
+							<th> Qua </th>
+							<th> name </th>
+							<th> serving size </th>
+							<th> cal </th>
+							<th> protein </th>
+							<th> total fat </th>
+							<th> saturated </th>
+							<th> trans </th>
+							<th> cholesterol </th>
+							<th> carbs </th>
+							<th> sugars </th>
+							<th> fiber </th>
+							<th> sodium </th>
+							<th> potassium </th>
+							<th> magnesium </th>
+							<th> calcium </th>
+							<th> iron </th>
+							<th> vit D</th>
+							</thead>
+							</tr>
+
+							<% @meal.my_meals.each do |item| %>
+							<tr>
+							<td><%= item.quantity %>&times;</td>
+							<td><%= item.food.name %></td>
+							<td><%= item.total_servingSize %></td> 
+							<td><%= item.total_calories.round %></td>
+							<td><%= item.total_protein.round %></td> 
+							<td><%= item.total_totalFat.round %></td> 
+							<td><%= item.total_saturated.round %></td> 
+							<td><%= item.total_trans.round %></td> 
+							<td><%= item.total_cholesterol.round %></td> 
+							<td><%= item.total_carbohydrates.round %></td> 
+							<td><%= item.total_sugars.round %></td> 
+							<td><%= item.total_dietaryFiber.round %></td> 
+							<td><%= item.total_sodium.round %></td> 
+							<td><%= item.total_potassium.round %></td> 
+							<td><%= item.total_magnesium.round %></td> 
+							<td><%= item.total_calcium.round %></td> 
+							<td><%= item.total_iron.round %></td> 
+							<td><%= item.total_vitaminD.round %></td> 
+							</tr>
+							<% end %>
+
+							<tr>
+							<th colspan="2">Total</th>
+							<td><strong><%= @meal.total_servingSize %></strong></td>
+							<td><strong><%= @meal.total_calories %></strong></td>
+							<td><strong><%= @meal.total_protein.round %></strong></td>
+							<td><strong><%= @meal.total_totalFat.round %></strong></td>
+							<td><strong><%= @meal.total_saturated.round %></strong></td>
+							<td><strong><%= @meal.total_trans.round %></strong></td>
+							<td><strong><%= @meal.total_cholesterol.round %></strong></td>
+							<td><strong><%= @meal.total_carbohydrates.round %></strong></td>
+							<td><strong><%= @meal.total_sugars.round %></strong></td>
+							<td><strong><%= @meal.total_dietaryFiber.round %></strong></td>
+							<td><strong><%= @meal.total_sodium.round %></strong></td>
+							<td><strong><%= @meal.total_potassium.round %></strong></td>
+							<td><strong><%= @meal.total_magnesium.round %></strong></td>
+							<td><strong><%= @meal.total_calcium.round %></strong></td>
+							<td><strong><%= @meal.total_iron.round %></strong></td>
+							<td><strong><%= @meal.total_vitaminD.round %></strong></td>
+							</tr>
+
+
+  						</table>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

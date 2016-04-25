@@ -1,149 +1,292 @@
-<p id="notice"><%= notice %></p>
+<!-- This page shows the specific food page -->
+<!-- it shoes where the food is available, when it is available, it belongs to what type of food and the food's 
+  nutrition fact label -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @food.name %>
-</p>
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+  <div class="container">
+    <div class="fontshow">
 
-<p>
-  <strong>Type:</strong>
- <%= @food.type.name %>
-</p>
 
-<%= render partial: 'times_list' %>
+              <div class="col-md-12 col-md-offset-2">  
+              <div class="row">
+                      
+                  <div class="col-md-4">
 
-<%= render partial: 'restaurants_list' %>
+                    <div class="row">
+                        <div class="shadbox">
 
-<p>
-  <strong>Servingsize:</strong>
-  <%= @food.servingSize %>
-</p>
+                          <div class="row">
+                            <h1><%= @food.name %></h1>
+                          </div>
+                          <hr>
+                          <div class="row vdivide">
 
-<p>
-  <strong>Calories:</strong>
-  <%= @food.calories %>
-</p>
+                            <div class="col-md-6">
+                              <div class="row">
+                                <h5>Type</h5>
+                              <p><%= @food.type.name %></p>
+                              </div>
+                              <hr>
+                              <div class="row">
+                                <h5>Available During</h5>
+                              <p><%= render partial: 'times_list' %>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <h5>Served At</h5>
+                              <p><%= render partial: 'restaurants_list'%></p>
+                            </div>
+                          </div>
 
-<p>
-  <strong>Protein:</strong>
-  <%= @food.protein %>
-</p>
+                          
 
-<p>
-  <strong>Totalfat:</strong>
-  <%= @food.totalFat %>
-  <%= ((@food.totalFat/65.0)*100).round %>%
-</p>
+                           
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="shadbox">
 
-<p>
-  <strong>Saturated:</strong>
-  <%= @food.saturated %>
-  <%= ((@food.saturated/20.0)*100).round %>%
-</p>
+                        <h5>Allergens & Diet</h5>
 
-<p>
-  <strong>Trans:</strong>
-  <%= @food.trans %>
-</p>
+                        <% if @food.eggAllergy==true%>
+                        <%= image_tag("egg-free.svg", class: 'im', :alt => "rss feed") %>
+                        <h6>Egg Allergy</h6>
+                        <% end %>
 
-<p>
-  <strong>Cholesterol:</strong>
-  <%= @food.cholesterol %>
-  <%= ((@food.cholesterol/300.0)*100).round %>%
-</p>
+                        <% if @food.fishAllergy==true%>
+                        <%= image_tag("fish.svg", class: 'im', :alt => "rss feed") %>
+                        <h6>Fish Allergy</h6>
+                        <% end %>
 
-<p>
-  <strong>Carbohydrates:</strong>
-  <%= @food.carbohydrates %>
-   <%= ((@food.carbohydrates/300.0)*100).round %>%
-</p>
+                        <% if @food.shellfishAllergy==true%>
+                        <%= image_tag("shell.svg", class: 'im', :alt => "rss feed") %>
+                        <h6>Shellfish Allergy</h6>
+                        <% end %>
 
-<p>
-  <strong>Sugars:</strong>
-  <%= @food.sugars %>
-</p>
 
-<p>
-  <strong>Dietaryfiber:</strong>
-  <%= @food.dietaryFiber %>
-  <%= ((@food.dietaryFiber/25.0)*100).round %>%
-</p>
+                        <% if @food.soyAllergy==true%>
+                        <%= image_tag("soy.svg", class: 'im', :alt => "rss feed") %>
+                        <h6>Soy Allergy</h6>
+                        <% end %>
 
-<p>
-  <strong>Sodium:</strong>
-  <%= @food.sodium %>
-   <%= ((@food.sodium/2400.0)*100).round %>%
-</p>
 
-<p>
-  <strong>Potassium:</strong>
-  <%= @food.potassium %>
-</p>
+                        <% if @food.dairyAllergy==true%>
+                        <%= image_tag("dairy.svg", class: 'im', :alt => "rss feed") %>
+                        <h6>Dairy Allergy</h6>
+                        <% end %>
 
-<p>
-  <strong>Magnesium:</strong>
-  <%= @food.magnesium %>
-</p>
 
-<p>
-  <strong>Calcium:</strong>
-  <%= @food.calcium %>
-</p>
+                        <% if @food.milkAllergy==true%>
+                        <%= image_tag("milk.svg", class: 'im', :alt => "rss feed") %>
+                        <h6>Milk Allergy</h6>
+                        <% end %>
 
-<p>
-  <strong>Iron:</strong>
-  <%= @food.iron %>
-</p>
 
-<p>
-  <strong>Vitamind:</strong>
-  <%= @food.vitaminD %>
-</p>
+                        <% if @food.wheatAllergy==true%>
+                        <%= image_tag("wheat.svg", class: 'im', :alt => "rss feed") %>
+                        <h6>Wheat Allergy</h6>
+                        <% end %>
 
-<p>
-  <strong>Eggallergy:</strong>
-  <%= @food.eggAllergy %>
-</p>
 
-<p>
-  <strong>Fishallergy:</strong>
-  <%= @food.fishAllergy %>
-</p>
+                        <% if @food.g6pdAllergy==true%>
+                        <%= image_tag("g6pd.svg", class: 'im', :alt => "rss feed") %>
+                        <h6>G6PD Allergy</h6>
+                        <% end %>
 
-<p>
-  <strong>Shellfishallergy:</strong>
-  <%= @food.shellfishAllergy %>
-</p>
+                        <% if @food.vegetarian==true%>
+                        <%= image_tag("vig.svg", class: 'im', :alt => "rss feed") %>
+                        <h6>Vegetarian</h6>
+                        <% end %>
+                            
+                      </div>
+                    </div>
+                  
+                  </div> 
 
-<p>
-  <strong>Soyallergy:</strong>
-  <%= @food.soyAllergy %>
-</p>
+                  <div class="col-md-8 ">
+                        <div class="shadlabelbox" >
+                          <section class="performance-facts">
+                            </br>
+                              <header class="performance-facts__header">
+                                <h2 class="performance-facts__title">Nutrition Facts</h2>
+                                    <p>Serving Size <%= @food.servingSize %></p>
+                              </header>
+                            
+                              <table class="performance-facts__table">
+                                <thead>
+                                  <tr>
+                                    <th colspan="3" class="small-info">
+                                      Amount Per Serving
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th colspan="2">
+                                      <b>Calories</b>
+                                      <%= @food.calories %>
+                                    </th>
+                                  </tr>
+                                  <tr class="thick-row">
+                              <table class="performance-facts__table">
+                                <thead>
+                                </thead>
+                                <tbody>
+                                  <tr class="thick-row">
+                                    <td colspan="3" class="small-info">
+                                      
+                                      <b>% Daily Value*</b>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th colspan="2">
+                                      <b>Protein</b>
+                                      <%= @food.protein %>g
+                                    </th>
+                                    <td>
+                                     
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th colspan="2">
+                                      <b>Total Fat</b>
+                                      <%= @food.totalFat %>g
+                                    </th>
+                                    <td>
+                                      <b><%= ((@food.totalFat/65.0)*100).round %>%</b>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="blank-cell">
+                                    </td>
+                                    <th>
+                                      Saturated Fat
+                                      <%= @food.saturated %>g
+                                    </th>
+                                    <td>
+                                      <b><%= ((@food.saturated/20.0)*100).round %>%</b>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="blank-cell">
+                                    </td>
+                                    <th>
+                                      Trans Fat
+                                      <%= @food.trans %>g
+                                    </th>
+                                    <td>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th colspan="2">
+                                      <b>Cholesterol</b>
+                                      <%= @food.cholesterol %>mg
+                                    </th>
+                                    <td>
+                                      <b><%= ((@food.cholesterol/300.0)*100).round %>%</b>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th colspan="2">
+                                      <b>Total Carbohydrate</b>
+                                      <%= @food.carbohydrates %>g
+                                    </th>
+                                    <td>
+                                      <b><%= ((@food.carbohydrates/300.0)*100).round %>%</b>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="blank-cell">
+                                    </td>
+                                    <th>
+                                      Sugars
+                                      <%= @food.sugars %>g
+                                    </th>
+                                    <td>
+                                    </td>
+                                  </tr>  
+                                  <tr>
+                                    <th colspan="2">
+                                      <b>Dietary Fiber</b>
+                                      <%= @food.dietaryFiber %>g
+                                    </th>
+                                    <td>
+                                      <b><%= ((@food.dietaryFiber/25.0)*100).round %>%</b>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th colspan="2">
+                                      <b>Sodium</b>
+                                      <%= @food.sodium %>mg
+                                    </th>
+                                    <td>
+                                      <b><%= ((@food.sodium/2400.0)*100).round %>%</b>
+                                    </td>
+                                  </tr>
+                                   <tr>
+                                    <th colspan="2">
+                                      <b>Potassium</b>
+                                      <%= @food.potassium %>mg
+                                    </th>
+                                    <td>
+                                      <b><%= ((@food.potassium/3625.0)*100).round %>%</b>
+                                    </td>
+                                  </tr>
+                                   <tr>
+                                    <th colspan="2">
+                                      <b>Magnesium</b>
+                                      <%= @food.magnesium %>mg
+                                    </th>
+                                    <td>
+                                      <b><%= ((@food.magnesium/375.0)*100).round %>%</b>
+                                    </td>
+                                  </tr>
+                                   <tr>
+                                    <th colspan="2">
+                                      <b>Calcium</b>
+                                      <%= @food.calcium %>mg
+                                    </th>
+                                    <td>
+                                      <b><%= ((@food.calcium/670.0)*100).round %>%</b>
+                                    </td>
+                                  </tr>
+                                   <tr>
+                                    <th colspan="2">
+                                      <b>Iron</b>
+                                      <%= @food.iron %>mg
+                                    </th>
+                                    <td>
+                                      <b><%= ((@food.iron/17.36)*100).round %>%</b>
+                                    </td>
+                                  </tr>
+                                  <tr >
+                                    <th colspan="2">
+                                      <b>Vitamin D</b>
+                                      <%= @food.vitaminD %>mg
+                                    </th>
+                                    <td>
+                                      <b><%= ((@food.vitaminD/600.0)*100).round %>%</b>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              
+                            </section>
+  <%= button_to 'Add to My Meal', my_meals_path(food_id: @food), :class => 'mymealbutton' %>
+                            
+                        </div>
+                  </div>
 
-<p>
-  <strong>Dairyallergy:</strong>
-  <%= @food.dairyAllergy %>
-</p>
+              </div>
+              </div>
+  </div>
+  </div>
+  </div>
+</div>
 
-<p>
-  <strong>Milkallergy:</strong>
-  <%= @food.milkAllergy %>
-</p>
 
-<p>
-  <strong>Wheatallergy:</strong>
-  <%= @food.wheatAllergy %>
-</p>
 
-<p>
-  <strong>G6pdallergy:</strong>
-  <%= @food.g6pdAllergy %>
-</p>
 
-<p>
-  <strong>Vegetarian:</strong>
-  <%= @food.vegetarian %>
-</p>
-
-<%= link_to 'Edit', edit_food_path(@food) %> |
-<%= link_to 'Back', foods_path %>

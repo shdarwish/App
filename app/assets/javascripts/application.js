@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function() {
+  $('.button').on('click', function() {
+    $('.content').toggleClass('isOpen');
+  });
+});

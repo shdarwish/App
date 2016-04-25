@@ -1,3 +1,4 @@
+<!-- the form to add and edit users -->
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,23 +12,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="field text-left">
+    <%= f.label :name, class: 'form-group' %><br>
+    <%= f.text_field :name, class: 'appformcontrol form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
+  <div class="field text-left">
+    <%= f.label :password,  class: 'form-group' %><br>
+    <%= f.password_field :password, class: 'appformcontrol form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
+  <div class="field text-left">
+    <%= f.label :password_confirmation, class: 'form-group'  %><br>
+    <%= f.password_field :password_confirmation, class: 'appformcontrol form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :admin %><br>
-    <%= f.check_box :admin %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="field text-left">
+
+    <%= f.check_box :admin %>Admin 
+ &nbsp; &nbsp;<%= f.label :admin, class: 'admincheck form-group' do %>
+  <% end %>
+    
+    </div>
+    <div class="actions">
+      <%= f.submit class: 'userformbutton btn btn-info' %>
+      <%= link_to 'Back', users_path, class: 'userformbutton btn btn-info userbackbutton'%>
+    </div>
+
 <% end %>

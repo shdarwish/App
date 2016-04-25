@@ -1,5 +1,7 @@
 class MealTimesController < ApplicationController
   before_action :set_meal_time, only: [:show, :edit, :update, :destroy]
+
+  #do not check if the user is logged_in before preforming step1
   skip_before_action :authenticate, only: [:step1]
 
   # GET /meal_times
@@ -62,6 +64,8 @@ class MealTimesController < ApplicationController
     end
   end
 
+  # This method take us to a page to be used for Step1 in Configure a Meal process
+  # the page will show all the records of meal times from the database 
   def step1
     @meal_times = MealTime.all
   end

@@ -1,21 +1,30 @@
+<!-- the login page -->
+
+<div class='content'>
+	<div class='button'></div>
+	<div class="mainbody-section text-center">
+	<div class="container">
 <div> 
-	<% if flash[:alert] %>
-		<p id="notice"><%= flash[:alert] %></p> 
-	<% end %>
+
 	<%= form_tag do %>
-		<fieldset>
-			<legend>Please Log In</legend> 
-			<div>
-				<%= label_tag :name, 'User Name:' %>
-        		<%= text_field_tag :name, params[:name] %>
-			</div>
-			<div>
-				<%= label_tag :password, 'Password:' %>
-        		<%= password_field_tag :password, params[:password] %>
-			</div> 
-			<div>
-				<%= submit_tag "Login" %> 
+		<fieldset> 
+			<div class="login-page">
+				<div class="forma">
+					<form class="login-forma">
+						<div>
+							<%= text_field_tag :name, params[:name], :placeholder => 'username', :class => 'placeh' %>
+						</div>
+						<div>
+							<%= password_field_tag :password, params[:password], :placeholder => 'password', :class => 'placeh'%>
+						</div>
+						
+							<%= submit_tag 'Login', :class => 'logbutton' %>	
+					</form>
+				</div>
 			</div>
 		</fieldset> 
 	<% end %>
+</div>	
+	</div>
+	</div>
 </div>

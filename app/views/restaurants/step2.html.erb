@@ -1,27 +1,44 @@
-<p id="notice"><%= notice %></p>
+<!--  the second step in configure a meal process, which lists all the restaurants in the system depending on that was chosen for timing-->
 
-<h4><strong>Restaurants</strong></h4>
 
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- Start users Heading Section -->
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+    <div class="container">
+      <div class="row">
+        <div id="appHeading" class="section-title text-center">
+          <h3>Step 2</h3>
+          <p>Choose your desired restaurant</p>
+        </div>
+      </div>
+<!--end of users heading section-->
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          
+            <div class=" shadbox">
+              <div class="step2font">
+              <table class="table text-center" >
+              <% if @restaurants.empty? %>
+              <p> No records found</p>
+              <% else %>
+                <% @restaurants.each do |restaurant| %>
+                  <tr>
+                  <td>
+                    <%= link_to restaurant.name, configure_a_meal_step2_path(:restaurant => restaurant.name) %>
+                  </td>
+                  </tr>
+                 <% end %>
+                  <% end %>
+                </table>
+                </div>
 
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= link_to restaurant.name, configure_a_meal_step2_path(:restaurant => restaurant.name) %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+

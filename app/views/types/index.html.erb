@@ -1,27 +1,56 @@
-<p id="notice"><%= notice %></p>
+<!-- the page that lists all the types in the application -->
 
-<h4><strong>Listing Types</strong></h4>
-
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @types.each do |type| %>
-      <tr>
-        <td><%= type.name %></td>
-        <td><%= link_to 'Show', type %></td>
-        <td><%= link_to 'Edit', edit_type_path(type) %></td>
-        <td><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Type', new_type_path %>
+<!-- Start types Heading Section -->
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+    <div class="container">
+      <div class="row">
+        <div id="appHeading" class="section-title text-center">
+          <h3>Listing types</h3>
+          <p>Add, Edit and Delete types</p>
+        </div>
+      </div>
+<!--end of types heading section-->
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <div id="listingappPanel">
+            <div class="panel-body shadbox">
+              <table class="table text-left" >
+                <tr>
+                  <th>type Name</th>
+                </tr>
+                <% @types.each do |type| %>
+                  <tr>
+                                            
+                  <td><%= type.name %></td>
+                  <td> 
+                    <div class="pull-right hidden-phone">
+                      <div id="listingappbuttons">
+                        <button class="btn btn-default btn-xs">
+                          <!--<i class="fa fa-check"></i>-->
+                          <%= link_to '', type, :class =>'fa fa-check' %>
+                        </button>
+                        <button class="btn btn-default btn-xs">
+                          <!--<i class="fa fa-pencil"></i>-->
+                          <%= link_to '', edit_type_path(type), :class =>'fa fa-pencil' %>
+                        </button>
+                        <button class="btn btn-default btn-xs">
+                          <!--<i class="fa fa-times"></i>-->
+                          <%= link_to '', type, method: :delete, data: { confirm: 'Are you sure?' }, :class =>'fa fa-times' %>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                  </tr>
+                <% end %>
+              </table>
+              <%= link_to 'Add New type', new_type_path, class: 'appformbutton btn btn-info appbackbutton'%>
+              <%= link_to 'Back', nutritionist_path, class: 'appformbutton btn btn-info appbackbutton'%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

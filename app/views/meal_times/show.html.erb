@@ -1,9 +1,45 @@
-<p id="notice"><%= notice %></p>
+<!--  the page that will show the specifc time -->
 
-<p>
-  <strong>Time:</strong>
-  <%= @meal_time.time %>
-</p>
+            <!-- Start Show Meal Times Heading Section -->
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+    <div class="container">
+      <div class="row">
+        <div id="ShowappsHeading" class="section-title text-center">
+          <h3>Show Meal Time</h3>
+        </div>
+      </div>
+<!--end of show Meal Times heading section-->
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <div id="showappPanel" >
+            <div class="panel-body shadbox">
+              <table class="table text-left">
+                <tr>
+                  <th>Meal Time</th>
+                </tr>
+                <tr>
+                  <td><%= @meal_time.time %></td>
+                  <td>
+                    <button class="btn btn-default btn-xs">
+                          <!--<i class="fa fa-pencil"></i>-->
+                          <%= link_to '', edit_meal_time_path, :class =>'fa fa-pencil' %>
+                      </button>
+                    </td>
+                </tr>
+              </table>
+              <div class="row">
+              <%= link_to 'Back', meal_times_path, class: 'appformbutton btn btn-info appbackbutton'%>
+            </div>
 
-<%= link_to 'Edit', edit_meal_time_path(@meal_time) %> |
-<%= link_to 'Back', meal_times_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+              
+
+

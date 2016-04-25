@@ -1,6 +1,8 @@
 class Search < ActiveRecord::Base
 
-	#Methods
+	# Methods
+	# This method will preform the search by ranges and the search by allergies and diet 
+	# it will take the paramters from the search/new and pass them in this method 
 	def search_foods
 
 		foods = Food.all

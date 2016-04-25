@@ -1,5 +1,6 @@
 class TypesController < ApplicationController
   before_action :set_type, only: [:show, :edit, :update, :destroy]
+  #do not check if the user is logged in before preforming step3
   skip_before_action :authenticate, only: [:step3]
 
   # GET /types
@@ -65,7 +66,6 @@ class TypesController < ApplicationController
   def step3
     @types = Type.clickedrestaurant(params[:restaurant])
     $restaurant = params[:restaurant]
-    puts $restaurant
 
   end
 

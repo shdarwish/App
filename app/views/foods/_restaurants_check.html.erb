@@ -1,3 +1,5 @@
+<!-- This section list all resturants in the application as check box for the form -->
+
 <p>
   <% for restaurant in Restaurant.all  %>
      <%= check_box_tag "restaurant_ids[]", restaurant.id, @food.restaurants.include?(restaurant) %>

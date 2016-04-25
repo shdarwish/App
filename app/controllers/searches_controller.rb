@@ -1,10 +1,11 @@
 class SearchesController < ApplicationController
-  skip_before_action :authenticate
 
+	#before going to any page it checks if the user is logged_in
+	skip_before_action :authenticate
+
+	# This method start a new search by range
 	def new 
 		@search = Search.new
-	# I might need this thing to do search by food type 
-	#	@categories = Book.uniq.pluck(:categories)
 	end
 
 	def create 
@@ -12,6 +13,7 @@ class SearchesController < ApplicationController
 		redirect_to @search
 	end
 
+	# This method show the results from search by range
 	def show
 		@search = Search.find(params[:id])
 	end

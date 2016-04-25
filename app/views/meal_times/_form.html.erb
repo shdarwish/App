@@ -1,3 +1,5 @@
+<!-- the form that is used to create and edit meal times -->
+
 <%= form_for(@meal_time) do |f| %>
   <% if @meal_time.errors.any? %>
     <div id="error_explanation">
@@ -11,11 +13,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :time %><br>
-    <%= f.text_field :time %>
+  <div class="field text-left">
+    <%= f.label :time, class: 'form-group' %><br>
+    <%= f.text_field :time, class: 'appformcontrol form-control' %>
   </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: ' appformbutton btn btn-info' %>
+    <%= link_to 'Back', meal_times_path, class: 'appformbutton btn btn-info appbackbutton'%>
   </div>
 <% end %>

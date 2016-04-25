@@ -1,11 +1,41 @@
+<!-- search by name page -->
 
-<h3>Comprehensive Details</h3>
+  <div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
 
+    
+    <div id="body">
 
+        <!-- heading Section -->
+                <div class="container">
+                    <div class="row">
+                        <div id="comprdetailheading" class="section-title text-center">
+                            <h3>What are you looking for?</h3>
+                        </div>
+                    </div>
+                    
+                <!--end of heading    -->
+                
+                <!--start of search bar-->
+                
+                    <div class="row">
+                        <div id="searchbar">
+                        <div class="col-md-8 col-md-offset-2">
+                            
+                        <%= form_tag fsearch_path, id: 'search-form', :method => 'get' do %>
+                         <%= text_field_tag :search, params[:search], id: "search-text", :placeholder => 'Search by food name' %>
+                          <%= submit_tag "Search", id: "search-button" %>
+                          <% end %>
 
-      <!-- search thing -->
-          <%= form_tag fsearch_path, :method => 'get' do %>
-            <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search" %>
-          <% end %>
-      <!-- end of search -->
+                        </div>
+                        </div>
+                        </div>
+                        
+                    <!--end of search bar-->
+                        
+                </div>
+            </div>
+        </div>
+
+    </div>

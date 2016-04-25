@@ -1,3 +1,5 @@
+<!-- the form to add and edit restaurants -->
+
 <%= form_for(@restaurant) do |f| %>
   <% if @restaurant.errors.any? %>
     <div id="error_explanation">
@@ -11,11 +13,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="field text-left">
+    <%= f.label :name, class: 'form-group' %><br>
+    <%= f.text_field :name, class: 'appformcontrol form-control' %>
   </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: ' appformbutton btn btn-info' %>
+    <%= link_to 'Back', restaurants_path, class: 'appformbutton btn btn-info appbackbutton'%>
   </div>
 <% end %>

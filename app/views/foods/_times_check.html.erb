@@ -1,3 +1,6 @@
+<!-- This section list all times in the application as check box for the form -->
+
+
 <p>
   <% for meal_time in MealTime.all  %>
      <%= check_box_tag "meal_time_ids[]", meal_time.id, @food.meal_times.include?(meal_time) %>

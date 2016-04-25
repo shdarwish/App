@@ -1,146 +1,281 @@
-<h1> Custom Search</h1>
-
-<%= form_for @search, html: {class: "pure-form"} do |s| %>
-
-	<div class="field">
-		<%= s.label :calories %><br />
-		<p>min: </p><%= s.text_field :calories_min %>
-		<p>max: </p><%= s.text_field :calories_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :protein %><br />
-		<p>min: </p><%= s.text_field :protein_min %>
-		<p>max: </p><%= s.text_field :protein_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :totalfat %><br />
-		<p>min: </p><%= s.text_field :totalfat_min %>
-		<p>max: </p><%= s.text_field :totalfat_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :saturated %><br />
-		<p>min: </p><%= s.text_field :saturated_min %>
-		<p>max: </p><%= s.text_field :saturated_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :trans %><br />
-		<p>min: </p><%= s.text_field :trans_min %>
-		<p>max: </p><%= s.text_field :trans_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :cholesterol %><br />
-		<p>min: </p><%= s.text_field :cholesterol_min %>
-		<p>max: </p><%= s.text_field :cholesterol_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :carbohydrate %><br />
-		<p>min: </p><%= s.text_field :carbohydrate_min %>
-		<p>max: </p><%= s.text_field :carbohydrate_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :sugers %><br />
-		<p>min: </p><%= s.text_field :sugars_min %>
-		<p>max: </p><%= s.text_field :sugars_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :dietaryfiber %><br />
-		<p>min: </p><%= s.text_field :dietaryfiber_min %>
-		<p>max: </p><%= s.text_field :dietaryfiber_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :sodium %><br />
-		<p>min: </p><%= s.text_field :sodium_min %>
-		<p>max: </p><%= s.text_field :sodium_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :potassium %><br />
-		<p>min: </p><%= s.text_field :potassium_min %>
-		<p>max: </p><%= s.text_field :potassium_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :magnesium %><br />
-		<p>min: </p><%= s.text_field :magnesium_min %>
-		<p>max: </p><%= s.text_field :magnesium_max %>
-	</div>
-
-	<div class="field">
-		<%= s.label :calcium %><br />
-		<p>min: </p><%= s.text_field :calcium_min %>
-		<p>max: </p><%= s.text_field :calcium_max %>
-	</div>
+<!-- the search by range pages -->
 
 
-	<div class="field">
-		<%= s.label :iron %><br />
-		<p>min: </p><%= s.text_field :iron_min %>
-		<p>max: </p><%= s.text_field :iron_max %>
-	</div>
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-left">
 
-	<div class="field">
-		<%= s.label :vitaminD %><br />
-		<p>min: </p><%= s.text_field :vitamind_min %>
-		<p>max: </p><%= s.text_field :vitamind_max %>
-	</div>
+<div id="body">
+	<!-- Start Heading Section -->
+	<div class="container">
+		<div class="row">
+			<div id= "Nutritionalrangeheading" class="section-title text-center">
+				<h3>Nutrient Ranges</h3>
+                <p>Search for foods based on nutrient ranges and allergens</p>
+            </div>
+        </div>
+                    
+   <!--end heading section-->
+                    
+                    
+   <!--nutrient ranges table -->
+        <div class="row">
+            <div class="col-md-6">
+                <div id="rangestable" class="pricing-table">
+                    <div class="plan-name">
+                        <h3>Nutrient Ranges</h3>
+                    </div>
+                    <div class="plan-list">
+                        <ul>
+                        	<%= form_for @search, html: {class: "pure-form"} do |s| %>
+                        	<div class="row">
+                        		<div id= "minandmax" class="col-md-2 form-group">
+                                    <%= s.text_field :calories_max, :placeholder =>'Max', class:'form-control'%> 
+                                </div> 
+                                <div class="col-md-2 form-group">
+                                	<%= s.text_field :calories_min, :placeholder =>'Min', class:'form-control'%> 
+                                </div>
+                                <li><%= s.label :calories %></li>
+                            </div>
+                                            
+                            <div class="row">
+                                <div class="col-md-2 form-group">
+                                    <%= s.text_field :protein_max, :placeholder =>'Max', class:'form-control'%> 
+                                </div> 
+                                <div class="col-md-2 form-group">
+                                    <%= s.text_field :protein_min, :placeholder =>'Min', class:'form-control'%> 
+                                </div>
+                                <li><%= s.label :protein %></li>
+                            </div>
+                                            	
+                            <div class="row">
+                            	<div class="col-md-2 form-group">
+                                    <%= s.text_field :totalfat_max, :placeholder =>'Max', class:'form-control'%> 
+                                </div> 
+                                <div class="col-md-2 form-group">
+                                    <%= s.text_field :totalfat_min, :placeholder =>'Min', class:'form-control'%> 
+                                </div>
+                                <li><%= s.label :totalfat %></li>
+                            </div>
+                                            
+                            <div class="row">
+                                <div class="col-md-2 form-group">
+                                	<%= s.text_field :saturated_max, :placeholder =>'Max', class:'form-control'%> 
+                                </div> 
+                                <div class="col-md-2 form-group">
+                                	<%= s.text_field :saturated_min, :placeholder =>'Min', class:'form-control'%>  
+                                </div>
+                                    <li><%= s.label :saturated %></li>
+                            </div>
+                                            
+                            <div class="row">
+                                <div class="col-md-2 form-group">
+                                    <%= s.text_field :trans_max, :placeholder =>'Max', class:'form-control'%> 
+                                </div> 
+                                <div class="col-md-2 form-group">
+                                    <%= s.text_field :trans_min, :placeholder =>'Min', class:'form-control'%> 
+                                </div>
+                                <li><%= s.label :trans %></li>
+                            </div>
 
-	<div class="field">
-		<%= s.label :eggAllergy %><br>
-		<%= s.check_box :eggAllergy %>
-    </div>
+                            <div class="row">
+                                <div class="col-md-2 form-group">
+                                    <%= s.text_field :cholesterol_max, :placeholder =>'Max', class:'form-control'%> 
+                                </div> 
+                                <div class="col-md-2 form-group">
+                                    <%= s.text_field :cholesterol_min, :placeholder =>'Min', class:'form-control'%> 
+                                </div>
+                                    <li><%= s.label :cholesterol %></li>
+                            </div>
+                                             
+                            <div class="row">
+                                <div class="col-md-2 form-group">
+                                    <%= s.text_field :carbohydrate_max, :placeholder =>'Max', class:'form-control'%> 
+                                </div> 
+                                <div class="col-md-2 form-group">
+                                    <%= s.text_field :carbohydrate_min, :placeholder =>'Min', class:'form-control'%> 
+                                </div>
+                                	<li><%= s.label :carbohydrate, class: 'carb-shorten' %></li>
+                                </div>
+                                            
+                                <div class="row"> 
+                                	<div class="col-md-2 form-group">
+                                        <%= s.text_field :sugars_max, :placeholder =>'Max', class:'form-control'%> 
+                                    </div> 
+                                    <div class="col-md-2 form-group">
+                                       	<%= s.text_field :sugars_min, :placeholder =>'Min', class:'form-control'%> 
+                                    </div>
+                                	<li><%= s.label :sugers %></li>
+                                </div>
+                                            
+                                <div class="row"> 
+                                    <div class="col-md-2 form-group">
+                                        <%= s.text_field :dietaryfiber_max, :placeholder =>'Max', class:'form-control'%> 
+                                    </div> 
+                                    <div class="col-md-2 form-group">
+                                        <%= s.text_field :dietaryfiber_min, :placeholder =>'Min', class:'form-control'%> 
+                                    </div>
+                                        <li><%= s.label :dietaryfiber %></li>
+                                    </div>
 
-    <div class="field">
-    	<%= s.label :fishAllergy %><br>
-    	<%= s.check_box :fishAllergy %>
-    </div>
+                                    <div class="row"> 
+                                    	<div class="col-md-2 form-group">
+                                    		<%= s.text_field :sodium_max, :placeholder =>'Max', class:'form-control'%> 
+                                        </div> 
+                                        <div class="col-md-2 form-group">
+                                           <%= s.text_field :sodium_min, :placeholder =>'Min', class:'form-control'%> 
+                                        </div>
+                                        <li><%= s.label :sodium %></li>
+                                    </div>
+                                            
+                                    <div class="row"> 
+                                        <div class="col-md-2 form-group">
+                                        	<%= s.text_field :potassium_max, :placeholder =>'Max', class:'form-control'%> 
+                                        </div> 
+                                        <div class="col-md-2 form-group">
+                                          <%= s.text_field :potassium_min, :placeholder =>'Min', class:'form-control'%> 
+                                        </div>
+                                            <li><%= s.label :potassium %></li>
+                                    </div>
+                                             
+                                    <div class="row">
+                                        <div class="col-md-2 form-group">
+                                           <%= s.text_field :magnesium_max, :placeholder =>'Max', class:'form-control'%> 
+                                        </div>
+                                        <div class="col-md-2 form-group">
+                                            <%= s.text_field :magnesium_min, :placeholder =>'Min', class:'form-control'%> 
+                                        </div>
+                                            <li><%= s.label :magnesium %></li>
+                                    </div>
+                                             
+                                    <div class="row">
+                                        <div class="col-md-2 form-group">
+                                        	<%= s.text_field :calcium_max, :placeholder =>'Max', class:'form-control'%> 
+                                        </div> 
+                                        <div class="col-md-2 form-group">
+                                            <%= s.text_field :calcium_min, :placeholder =>'Min', class:'form-control'%> 
+                                        </div>
+                                            <li><%= s.label :calcium %></li>
+                                    </div>
+                                            
+                                    <div class="row"> 
+                                        <div class="col-md-2 form-group">
+                                        	<%= s.text_field :iron_max, :placeholder =>'Max', class:'form-control'%> 
+                                        </div> 
+                                        <div class="col-md-2 form-group">
+                                           <%= s.text_field :iron_min, :placeholder =>'Min', class:'form-control'%> 
+                                        </div>
+                                            <li><%= s.label :iron %></li>
+                                    </div>
+                                             
+                                    <div class="row">
+                                        <div class="col-md-2 form-group">
+                                        	<%= s.text_field :vitamind_max, :placeholder =>'Max', class:'form-control'%> 
+                                        </div> 
+                                        <div class="col-md-2 form-group">
+                                        	<%= s.text_field :vitamind_min, :placeholder =>'Min', class:'form-control'%> 
+                                        </div> 
+                                            <li><%= s.label :vitaminD %></li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                       </div>
+                <!--end of nutrient ranges table-->
+                        
+                <!--start of allergens table        -->
+                	<div class="col-md-6">
+                		<div id="allergenstable" class="pricing-table">
+           					<div class="plan-name">
+                                 <h3>Allergens and Diet</h3>
+                            </div>
+                                    
+                            <div class="plan-list2">
+                                <ul>
+                                    <div id="checkboxes" class="col-md-2">
+                                        <div clas="row">
+                                            <label class= "checkbox-inline">
+                                                  	<%= s.check_box :vegetarian %>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <li> Diet: <%= s.label :vegetarian %></li>
+                                           
+                                    <div class="col-md-2">
+                                        <label class= "checkbox-inline">
+                                            <%= s.check_box :eggAllergy %>
+                                        </label>
+                                    </div>
+                                    <li>Allergen: <%= s.label :eggAllergy %> </li>
+                                            
+                                    <div class="col-md-2">
+                                        <label class=" checkbox-inline">
+                                            <%= s.check_box :fishAllergy %>
+                                        </label>
+                                    </div>
+                                    <li>Allergen: <%= s.label :fishAllergy %></li>
+                                            
+                                    <div class="col-md-2">
+                                        <div clas="row">
+                                            <label class="checkbox-inline">
+                                                  	<%= s.check_box :shellfishAllergy %>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <li>Allergen: <%= s.label :shellfishAllergy %></li>
+                                            
+                                    <div class="col-md-2">
+                                        <label class=" checkbox-inline">
+                                            <%= s.check_box :soyAllergy %>
+                                        </label>
+                                    </div>
+                                    	<li>Allergen: <%= s.label :soyAllergy %></li>
+                                            
+                                    <div class="col-md-2">
+                                        <label class=" checkbox-inline">
+                                            <%= s.check_box :dairyAllergy %>
+                                     	</label>
+                                    </div>
+                                    <li>Allergen: <%= s.label :dairyAllergy %></li>
+                                              
+                                    <div class="col-md-2">
+                                        <label class=" checkbox-inline">
+                                            <%= s.check_box :milkAllergy %>
+                                        </label>
+                                    </div>
+                                    <li>Allergen: <%= s.label :milkAllergy %></li>
+                                                
+                                    <div class="col-md-2">
+                                        <label class=" checkbox-inline">
+	                                        <%= s.check_box :wheatAllergy %>
+                                        </label>
+                                    </div>
+                                    <li>Allergen: <%= s.label :wheatAllergy%></li>
 
-    <div class="field">
-    	<%= s.label :shellfishAllergy %><br>
-    	<%= s.check_box :shellfishAllergy %>
-    </div>
+                                    <div class="col-md-2">
+                                        <label class=" checkbox-inline">
+                                             <%= s.check_box :g6pdAllergy %>
+                                        </label>
+                                    </div>
+                                	<li>Allergen: <%= s.label :g6pdAllergy %></li>
+                                    </ul>
+                               	</div>
+                            </div>
+                            <%= s.submit "Search", class: "searchbutton" %>
+                       	</div>
+                        
+                     
+                    </div>
+                     
 
-    <div class="field">
-    	<%= s.label :soyAllergy %><br>
-    	<%= s.check_box :soyAllergy %>
-    </div>
+                <%end%>
+                        <!--end of allergens table-->
 
-    <div class="field">
-    	<%= s.label :dairyAllergy %><br>
-    	<%= s.check_box :dairyAllergy %>
-    </div>
+    			</div>
+    		</div>
+    	</div>
 
-    <div class="field">
-    	<%= s.label :milkAllergy %><br>
-    	<%= s.check_box :milkAllergy %>
-    </div>
-
-    <div class="field">
-    	<%= s.label :wheatAllergy %><br>
-    	<%= s.check_box :wheatAllergy %>
-    </div>
-
-    <div class="field">
-    	<%= s.label :g6pdAllergy %><br>
-    	<%= s.check_box :g6pdAllergy %>
-    </div>
-
-    <div class="field">
-    	<%= s.label :vegetarian %><br>
-    	<%= s.check_box :vegetarian %>
-    </div>
-
-	<div class="action"><%= s.submit "Submit", class: "pure-button pure-button-primary" %></div>
-
-
-<% end %>
+    		</div>
+    	</div>
 
 

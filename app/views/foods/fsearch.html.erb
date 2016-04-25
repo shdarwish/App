@@ -1,49 +1,38 @@
-<p id="notice"><%= notice %></p>
+<!-- the page that comes after searching by name -->
 
-<h4><strong>Listing Foods</strong></h4>
+<!-- Start Heading Section -->
+<div class='content'>
+  <div class='button'></div>
+  <div class="mainbody-section text-center">
+    <div class="container">
+      <div class="row">
+        <div id="appHeading" class="section-title text-center">
+          <h3>The foods you searched for</h3>
+          <p>So what will you eat?</p>
+        </div>
+      </div>
+<!--end of heading section-->
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          
+            <div class=" shadbox">
+              <table class="table text-center" >
 
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Calories</th>
-      <th>Egg Allergy</th>
-      <th>Fish Allergy</th>
-      <th>Shellfish Allergy</th>
-      <th>Soy Allergy</th>
-      <th>Dairy Allergy</th>
-      <th>Milk Allergy</th>
-      <th>Wheat Allergy</th>
-      <th>G6PD Allergy</th>
-      <th>Vegetarian</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+                <!-- list all the food results -->
+                <% if @foods.empty? %>
+                <p> No records found</p>
+                <% else %>
+                <% @foods.each do |food| %>
+                  <tr>
+                  <td><%= link_to food.name, food %></td>
+                    </tr>
+                    <% end %>
+                  <% end %>
+                </table>
 
-  <tbody>
-    <% @foods.each do |food| %>
-      <tr>
-        <td><%= food.name %></td>
-        <td><%= food.type.name %></td>
-        <td><%= food.calories %></td>
-        <td><%= food.eggAllergy %></td>
-        <td><%= food.fishAllergy %></td>
-        <td><%= food.shellfishAllergy %></td>
-        <td><%= food.soyAllergy %></td>
-        <td><%= food.dairyAllergy %></td>
-        <td><%= food.milkAllergy %></td>
-        <td><%= food.wheatAllergy %></td>
-        <td><%= food.g6pdAllergy %></td>
-        <td><%= food.vegetarian %></td>
-        <td><%= link_to 'Show', food %></td>
-        <td><%= link_to 'Edit', edit_food_path(food) %></td>
-        <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Food', new_food_path %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

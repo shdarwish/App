@@ -250,7 +250,7 @@
                                       <%= @food.calcium %>mg
                                     </th>
                                     <td>
-                                      <b><%= ((@food.calcium/670.0)*100).round %>%</b>
+                                      <b><%= ((@food.calcium/1024.0)*100).round %>%</b>
                                     </td>
                                   </tr>
                                    <tr>
@@ -273,18 +273,25 @@
                                   </tr>
                                 </tbody>
                               </table>
+
+
                               
                             </section>
-  <%= button_to 'Add to My Meal', my_meals_path(food_id: @food), :class => 'mymealbutton' %>
-                            
-                        </div>
-                  </div>
 
-              </div>
-              </div>
-  </div>
-  </div>
-  </div>
+                              <% if logged_in? %>
+                                <%= link_to 'Back', foods_path, class: 'appformbutton btn btn-info appbackbutton'%>
+                                <% else %>
+                                <li>
+                                  <%= button_to 'Add to My Meal', my_meals_path(food_id: @food), :class => 'mymealbutton' %>
+                                </li>
+                              <% end %> 
+                        </div>
+                    </div>
+                </div>
+          </div>
+    </div>
+    </div>
+    </div>
 </div>
 
 

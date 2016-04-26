@@ -19,9 +19,7 @@
       <li>
         <%= link_to "By Nutrient Ranges", new_search_path%>
       </li>
-<!--       <li>
-        <a class='active'>Milestones</a>
-      </li> -->
+
       <li>
         <%= link_to 'By Food Name', page_path('compdet')%>
       </li>
@@ -31,9 +29,6 @@
       </li>
 
       
-      <!-- this following if condition showed admin when the user in not loged in -->
-      <!-- if the user logged in as an admin it change the link of admin to the user admin page and add logout button -->
-      <!-- if the user logged in as a nutritionist, the buttons change to nutritionist button that goes to nutritionist page and add logout button -->
 
       <% if logged_in? %>
         <% if current_user.admin? %>
